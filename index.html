@@ -1,29 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>조연주 | Web Publisher Portfolio</title>
-  <style>
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    header { text-align: center; padding: 60px 20px; background: #333; color: #fff; }
-    header h1 { margin: 0; font-size: 2.2rem; }
-    header p { margin-top: 10px; font-size: 1.1rem; color: #ccc; }
-    section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-    h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 30px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill { background: #eee; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; }
-    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-    .project { background: #fff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); overflow: hidden; transition: transform 0.2s; }
-    .project:hover { transform: translateY(-4px); }
-    .project img { width: 100%; display: block; }
-    .project-info { padding: 15px; }
-    .project-info h3 { margin: 0 0 8px; font-size: 1.1rem; }
-    .project-info p { margin: 0; font-size: 0.9rem; color: #666; }
-    footer { text-align: center; padding: 40px 20px; color: #777; font-size: 0.9rem; }
-    footer a { color: #777; text-decoration: none; }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <header>
     <h1>조연주</h1>
@@ -39,6 +24,10 @@
       <span class="skill">jQuery</span>
       <span class="skill">Responsive Web</span>
       <span class="skill">Git / GitHub</span>
+      <span class="skill">Angular</span>
+      <span class="skill">figma</span>
+      <span class="skill">Adobe Photoshop</span>
+      <span class="skill">Adobe illustrator</span>
     </div>
   </section>
 
@@ -46,25 +35,70 @@
     <h2>프로젝트</h2>
     <div class="projects">
       <div class="project">
-        <img src="https://via.placeholder.com/400x250/333/fff?text=Project+1" alt="프로젝트1">
+        <div class="project-img-slide">
+          <div class="swiper main-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">                
+                <img src="img/goods_01.jpg" class="slide-img" alt="굿즈베이커리 슬라이드 이미지">
+              </div>
+              <div class="swiper-slide">
+                <img src="img/goods_02.png" class="slide-img" alt="굿즈베이커리 모달 팝업">
+              </div>
+              <div class="swiper-slide">
+                <img src="img/goods_03.png" class="slide-img" alt="굿즈베이커리 탭">
+              </div>
+            </div>
+            <!-- 네비게이션 버튼 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <!-- 썸네일 슬라이드 -->
+          <div class="swiper thumb-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/goods_01.jpg" alt="굿즈베이커리 슬라이드 이미지 썸네일">
+              </div>
+              <div class="swiper-slide">
+                <img src="img/goods_02.png" alt="굿즈베이커리 모달 팝업 썸네일">
+              </div>
+              <div class="swiper-slide">
+                <img src="img/goods_03.png" alt="굿즈베이커리 탭 썸네일">
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="project-info">
-          <h3>쇼핑몰 리뉴얼</h3>
-          <p>반응형 퍼블리싱 / 기여도 80%</p>
+          <h3>POD플랫폼 (PC/Mobile/Admin) (굿즈베이커리)<br>Angular 기반 UI/UX 개선 및 반응형 퍼블리싱</h3>
+          <div>사용Tool : Angular, TypeScript, HTML5, SCSS, JavaScript, Git, Figma</div>
+          <ul class="list">
+            <li>1. PC, 모바일, 어드민 웹사이트 전반 UI/UX 개선</li>
+            <li>2. 반응형 UI 구현을 위해 공통 컴포넌트 설계 및 미디어쿼리 기반 대응</li>
+            <li>3. 어드민 페이지에서는 테이블, 필터, 폼 입력 요소 등 UI 컴포넌트 다수 구현</li>
+            <li>4. 다양한 화면 사이즈를 고려한 유연한 레이아웃 적용</li>
+            <li>5. 웹 접근성 준수 및 SEO 최적화 기반 마크업</li>
+          </ul>
         </div>
       </div>
       <div class="project">
         <img src="https://via.placeholder.com/400x250/666/fff?text=Project+2" alt="프로젝트2">
         <div class="project-info">
-          <h3>기업 홈페이지 구축</h3>
+          <h3>리바트(Livart) 상품 상세 페이지 퍼블리싱 정적 퍼블리싱</h3>
           <p>웹 접근성 준수 / 기여도 70%</p>
         </div>
       </div>
     </div>
-  </section>
-
+  </section>  
+  <div class="modal" id="imageModal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
   <footer>
-    © 2025 조연주 | 
+    © 2025 조연주 |
     <a href="mailto:youremail@example.com">youremail@example.com</a>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>  
+  <script src="js/script.js"></script>
+ 
 </body>
+
 </html>

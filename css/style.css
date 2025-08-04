@@ -1,0 +1,170 @@
+@charset "utf-8";
+
+ul,li{
+    list-style: none;
+    padding:0;
+    
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    background: #f9f9f9;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: #333;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    background: #eee;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+/* .project:hover {
+    transform: translateY(-4px);
+} */
+
+.project-img-slide {
+    
+  }
+  
+  .main-swiper img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  
+  .thumb-swiper {
+    margin:12px ;
+  }
+  .thumb-swiper .swiper-wrapper {
+    justify-content: center;
+  }
+  .thumb-swiper .swiper-slide{
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1 0 auto;
+  }
+  
+  .thumb-swiper img {
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  
+  .thumb-swiper .swiper-slide-thumb-active img {
+    opacity: 1;
+    border: 1px solid #ff5f23;
+  }
+
+.project img {
+    width: 100%;
+    display: block;
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-info h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+.project-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .modal-content {
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    margin: 5% auto;
+    border-radius: 6px;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #777;
+    text-decoration: none;
+}
