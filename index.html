@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조연주 | Web Publisher Portfolio</title>
+  <style>
+    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { text-align: center; padding: 60px 20px; background: #333; color: #fff; }
+    header h1 { margin: 0; font-size: 2.2rem; }
+    header p { margin-top: 10px; font-size: 1.1rem; color: #ccc; }
+    section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 30px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { background: #eee; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; }
+    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .project { background: #fff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); overflow: hidden; transition: transform 0.2s; }
+    .project:hover { transform: translateY(-4px); }
+    .project img { width: 100%; display: block; }
+    .project-info { padding: 15px; }
+    .project-info h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .project-info p { margin: 0; font-size: 0.9rem; color: #666; }
+    footer { text-align: center; padding: 40px 20px; color: #777; font-size: 0.9rem; }
+    footer a { color: #777; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>조연주</h1>
+    <p>Web Publisher Portfolio</p>
+  </header>
+
+  <section>
+    <h2>기술 스택</h2>
+    <div class="skills">
+      <span class="skill">HTML5</span>
+      <span class="skill">CSS3 / SCSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">jQuery</span>
+      <span class="skill">Responsive Web</span>
+      <span class="skill">Git / GitHub</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>프로젝트</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250/333/fff?text=Project+1" alt="프로젝트1">
+        <div class="project-info">
+          <h3>쇼핑몰 리뉴얼</h3>
+          <p>반응형 퍼블리싱 / 기여도 80%</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250/666/fff?text=Project+2" alt="프로젝트2">
+        <div class="project-info">
+          <h3>기업 홈페이지 구축</h3>
+          <p>웹 접근성 준수 / 기여도 70%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 조연주 | 
+    <a href="mailto:youremail@example.com">youremail@example.com</a>
+  </footer>
+</body>
+</html>
