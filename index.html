@@ -99,7 +99,7 @@
         <div class="code-view active">
           <h3>JS</h3>
           <pre><code class="language-js">
-new Swiper(".mySwiper", {
+new Swiper(".gb-list", {
   loop: true,
   pagination: { el: ".swiper-pagination" },
   navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
@@ -119,9 +119,9 @@ declare var Swiper: any;
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements AfterViewInit {
-  slides = ['1.jpg','2.jpg','3.jpg'];
+  slides = ['img/goods_01.png','img/goods_01.png','img/goods_01.png'];
   ngAfterViewInit() {
-    new Swiper('.mySwiper', {
+    new Swiper('.gb-list', {
       loop:true,
       pagination:{ el:'.swiper-pagination'},
       navigation:{ nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'}
@@ -357,6 +357,7 @@ export class AccordionComponent {
   </script>
 </body>
 </html>
+
 
 
 
