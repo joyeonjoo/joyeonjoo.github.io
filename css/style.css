@@ -207,8 +207,8 @@ header{
   100% {filter: hue-rotate(360deg);}
 }
 
-@media (max-width: 600px) {
-  .sidebar li.search {margin-bottom: 30px;}
+.content-area{
+    flex:auto;
 }
 
 section {
@@ -338,7 +338,7 @@ h2 {
 
 footer {
     text-align: center;
-    padding: 40px 20px;
+    padding: 40px 10px;
     color: #777;
     font-size: 0.9rem;
 }
@@ -348,6 +348,7 @@ footer a {
     text-decoration: none;
 
 }
+
 
 
 
