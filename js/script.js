@@ -53,3 +53,12 @@ function activeLink(){
 }
 listItem.forEach(item => 
 item.onclick = activeLink);
+
+const toggleBtn = document.querySelector('.toggle-code');
+    const codeSection = document.querySelector('.code-section');
+
+    toggleBtn.addEventListener('click', () => {
+      codeSection.classList.toggle('show');
+      toggleBtn.textContent =
+        codeSection.classList.contains('show') ? '코드 닫기 ▲' : '코드 보기 ▼';
+    });
