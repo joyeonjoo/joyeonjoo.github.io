@@ -73,7 +73,7 @@ header{
 
 .sidebar #btn {
     position: absolute;
-    left: 50%;
+    left: 12px;
     top: 6px;
     transform: translateX(-50%);
     width: 50px;
@@ -348,6 +348,7 @@ footer a {
     text-decoration: none;
 
 }
+
 
 
 
