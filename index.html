@@ -301,13 +301,13 @@ export class AccordionComponent {
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
-     // Swiper
+    // Swiper
     new Swiper(".gb-list", {
       loop: true,
       pagination: { el: ".swiper-pagination" },
       navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
     });
-
+    
     // 코드 보기 토글
     document.querySelectorAll('.toggle-code').forEach(btn=>{
       btn.addEventListener('click', ()=>{
@@ -316,39 +316,39 @@ export class AccordionComponent {
         btn.textContent = code.classList.contains('show') ? '코드 닫기 ▲' : '코드 보기 ▼';
       });
     });
-
+    
     // 코드 탭 전환
     document.querySelectorAll('.code-section').forEach(section=>{
-      const tabs = section.querySelectorAll('.code-tabs button');
+      const codeTabs = section.querySelectorAll('.code-tabs button'); // 변수명 수정
       const views = section.querySelectorAll('.code-view');
-
-      tabs.forEach((tab, idx)=>{
+    
+      codeTabs.forEach((tab, idx)=>{
         tab.addEventListener('click', ()=>{
-          tabs.forEach(t=>t.classList.remove('active'));
+          codeTabs.forEach(t=>t.classList.remove('active'));
           views.forEach(v=>v.classList.remove('active'));
           tab.classList.add('active');
           views[idx].classList.add('active');
         });
       });
     });
-
+    
     // 모달
     const modal = document.querySelector('#modal');
     document.querySelector('#openModal').addEventListener('click', () => modal.style.display='flex');
     document.querySelector('#closeModal').addEventListener('click', () => modal.style.display='none');
-
-    // 탭 UI
-    const tabs = document.querySelectorAll('.tabs button');
+    
+    // 탭 UI (변수명 수정)
+    const uiTabs = document.querySelectorAll('.tabs button'); 
     const tabContents = document.querySelectorAll('.tab-content');
-    tabs.forEach((tab, idx)=>{
+    uiTabs.forEach((tab, idx)=>{
       tab.addEventListener('click', ()=>{
-        tabs.forEach(t=>t.classList.remove('active'));
+        uiTabs.forEach(t=>t.classList.remove('active'));
         tabContents.forEach(c=>c.classList.remove('active'));
         tab.classList.add('active');
         tabContents[idx].classList.add('active');
       });
     });
-
+    
     // 아코디언
     document.querySelectorAll('.accordion button').forEach((btn)=>{
       btn.addEventListener('click', ()=>{
@@ -358,6 +358,7 @@ export class AccordionComponent {
   </script>
 </body>
 </html>
+
 
 
 
