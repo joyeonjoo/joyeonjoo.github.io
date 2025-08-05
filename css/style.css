@@ -290,6 +290,36 @@ footer a {
 }
 
 
+    .project-preview { margin-bottom: 20px; }
+    .slide-wrap {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+    }
+    .slide-item {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #eee;
+    }
+    .slide-item img { width: 200px; display: block; }
+    button.toggle-code {
+      background: #333; color: #fff; border: none;
+      padding: 10px 15px; border-radius: 6px; cursor: pointer;
+    }
+    .code-section { display: none; margin-top: 20px; }
+    .code-section.show { display: block; }
+    pre {
+      background: #1e1e1e;
+      color: #fff;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
 
 
 
