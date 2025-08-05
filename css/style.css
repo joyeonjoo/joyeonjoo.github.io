@@ -55,18 +55,7 @@ header{
     transition: 0.5s ease;
 }
 
-.sidebar.active .logo-content .logo {
-    opacity: 1;
-    transition-delay: 0.2s;
-}
-
-.sidebar .logo i {
-    font-size: 30px;
-    color: crimson;
-    margin-right: 5px;
-}
-
-.sidebar .logo h3 {
+.sidebar h3 div {
     font-size: 18px;
     color: gold;
     font-weight: 500;
@@ -83,6 +72,7 @@ header{
     color: #fff;
     text-align: center;
     line-height: 50px;
+    cursor: pointer;
 }
 
 .sidebar.active #btn {
@@ -99,36 +89,7 @@ header{
     height: 50px;
     margin: 5px 0;
     line-height: 50px;
-}
-
-.sidebar li.search {
-    margin-bottom: 100px;
-}
-
-.sidebar li input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    border: none;
-    outline: none;
-    padding-left: 50px;
-    font-size: 18px;
-    color: #fff;
-}
-
-.sidebar.active li input {
-    padding: 0 20px 0 50px;
-}
-
-.sidebar li .bx-search {
-    position: absolute;
-    font-size: 22px;
-    color: #fff;
-    z-index: 99;
+    cursor: pointer;
 }
 
 .sidebar li a {
@@ -137,7 +98,8 @@ header{
     white-space: nowrap;
     display: flex;
     align-items: center;
-    transition: 0.5s ease;
+    transition: 0.5s ease;    
+    cursor: pointer;
 }
 
 .sidebar li a:hover {
@@ -165,17 +127,6 @@ header{
     opacity: 1;
     pointer-events: auto;
     transition-delay: 0.2s;
-}
-
-.sidebar .list-logout {
-    position: absolute;
-    bottom: 0;
-    width: 64%;
-    margin: 15px 0;
-}
-
-.sidebar.bx-cart-alt .list-logout {
-    width: 89%;
 }
 
 .sidebar li .tooltip {
@@ -348,6 +299,7 @@ footer a {
     text-decoration: none;
 
 }
+
 
 
 
