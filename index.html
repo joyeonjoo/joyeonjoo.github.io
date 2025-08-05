@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>퍼블리셔 포트폴리오</title>
 
-  <!-- 코드 하이라이트 라이브러리 -->
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- 코드 하이라이트 -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -29,24 +32,11 @@
     .portfolio-project h2 { margin-bottom: 15px; }
     .project-preview { margin-bottom: 20px; }
 
-    /* 간단 슬라이드 */
-    .slide-wrap {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 10px;
-    }
-    .slide-item {
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #eee;
-    }
-    .slide-item img { width: 200px; display: block; }
+    /* Swiper 크기 */
+    .swiper { width:100%; max-width:600px; border-radius: 8px; overflow:hidden; }
+    .swiper-slide img { width: 100%; display: block; }
 
-    /* 코드 보기 버튼 */
+    /* 버튼 */
     button.toggle-code {
       background: #333; color: #fff; border: none;
       padding: 10px 15px; border-radius: 6px; cursor: pointer;
@@ -63,6 +53,18 @@
       border-radius: 8px;
       margin-bottom: 20px;
     }
+
+    /* 탭 */
+    .tabs { display:flex; gap:10px; margin-bottom:10px; }
+    .tabs button { flex:1; padding:10px; border:none; cursor:pointer; background:#eee; border-radius:6px; }
+    .tabs button.active { background:#333; color:#fff; }
+    .tab-content { display:none; padding:10px; background:#fafafa; border-radius:6px; }
+    .tab-content.active { display:block; }
+
+    /* 아코디언 */
+    .accordion button { width:100%; text-align:left; background:#eee; border:none; padding:10px; margin-top:5px; border-radius:6px; cursor:pointer;}
+    .accordion-content { display:none; padding:10px; background:#fafafa; border-radius:6px; margin-top:5px;}
+    .accordion-content.show { display:block; }
   </style>
 </head>
 <body>
@@ -73,40 +75,37 @@
   </header>
 
   <main>
-    <!-- 프로젝트 1 -->
+    <!-- 프로젝트 1: Swiper 상품 슬라이드 -->
     <section class="portfolio-project">
-      <h2>상품 슬라이드 구현</h2>
+      <h2>상품 슬라이드 (Swiper)</h2>
       <div class="project-preview">
-        <div class="slide-wrap">
-          <div class="slide-item"><img src="https://picsum.photos/200/200?1" alt="상품1"></div>
-          <div class="slide-item"><img src="https://picsum.photos/200/200?2" alt="상품2"></div>
-          <div class="slide-item"><img src="https://picsum.photos/200/200?3" alt="상품3"></div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?1" alt="상품1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?2" alt="상품2"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?3" alt="상품3"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
       </div>
       <button class="toggle-code">코드 보기 ▼</button>
       <div class="code-section">
-        <h3>HTML</h3>
-        <pre><code class="language-html">
-&lt;div class="slide-wrap"&gt;
-  &lt;div class="slide-item"&gt;&lt;img src="img1.jpg" alt="상품1"&gt;&lt;/div&gt;
-  &lt;div class="slide-item"&gt;&lt;img src="img2.jpg" alt="상품2"&gt;&lt;/div&gt;
-  &lt;div class="slide-item"&gt;&lt;img src="img3.jpg" alt="상품3"&gt;&lt;/div&gt;
-&lt;/div&gt;
-        </code></pre>
-        <h3>CSS</h3>
-        <pre><code class="language-css">
-.slide-wrap {
-  display:flex; gap:20px;
-  overflow-x:auto; scroll-snap-type:x mandatory;
-}
-.slide-item { flex:0 0 auto; scroll-snap-align:start; }
+        <h3>JS (Swiper 초기화)</h3>
+        <pre><code class="language-js">
+new Swiper(".mySwiper", {
+  loop: true,
+  pagination: { el: ".swiper-pagination" },
+  navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+});
         </code></pre>
       </div>
     </section>
 
-    <!-- 프로젝트 2 -->
+    <!-- 프로젝트 2: 모달 팝업 -->
     <section class="portfolio-project">
-      <h2>모달 팝업 구현</h2>
+      <h2>모달 팝업</h2>
       <div class="project-preview">
         <button id="openModal">모달 열기</button>
         <div id="modal" style="display:none; position:fixed; top:0;left:0;width:100%;height:100%;
@@ -127,9 +126,73 @@ document.querySelector('#closeModal').addEventListener('click', () => modal.styl
         </code></pre>
       </div>
     </section>
+
+    <!-- 프로젝트 3: 탭 UI -->
+    <section class="portfolio-project">
+      <h2>탭 UI</h2>
+      <div class="project-preview">
+        <div class="tabs">
+          <button class="active">탭1</button>
+          <button>탭2</button>
+          <button>탭3</button>
+        </div>
+        <div class="tab-content active">탭1 내용</div>
+        <div class="tab-content">탭2 내용</div>
+        <div class="tab-content">탭3 내용</div>
+      </div>
+      <button class="toggle-code">코드 보기 ▼</button>
+      <div class="code-section">
+        <h3>JS</h3>
+        <pre><code class="language-js">
+const tabs = document.querySelectorAll('.tabs button');
+const tabContents = document.querySelectorAll('.tab-content');
+tabs.forEach((tab, idx)=>{
+  tab.addEventListener('click', ()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    tabContents.forEach(c=>c.classList.remove('active'));
+    tab.classList.add('active');
+    tabContents[idx].classList.add('active');
+  });
+});
+        </code></pre>
+      </div>
+    </section>
+
+    <!-- 프로젝트 4: 아코디언 FAQ -->
+    <section class="portfolio-project">
+      <h2>FAQ 아코디언</h2>
+      <div class="project-preview accordion">
+        <button>Q. 반품은 어떻게 하나요?</button>
+        <div class="accordion-content">A. 마이페이지 > 주문내역에서 신청 가능합니다.</div>
+        <button>Q. 배송 기간은 얼마나 걸리나요?</button>
+        <div class="accordion-content">A. 평균 2~3일 소요됩니다.</div>
+      </div>
+      <button class="toggle-code">코드 보기 ▼</button>
+      <div class="code-section">
+        <h3>JS</h3>
+        <pre><code class="language-js">
+document.querySelectorAll('.accordion button').forEach((btn, idx)=>{
+  btn.addEventListener('click', ()=>{
+    btn.nextElementSibling.classList.toggle('show');
+  });
+});
+        </code></pre>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <script>
+    // Swiper
+    new Swiper(".mySwiper", {
+      loop: true,
+      pagination: { el: ".swiper-pagination" },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+    });
+
     // 코드 토글
     document.querySelectorAll('.toggle-code').forEach(btn=>{
       btn.addEventListener('click', ()=>{
@@ -139,10 +202,29 @@ document.querySelector('#closeModal').addEventListener('click', () => modal.styl
       });
     });
 
-    // 모달 JS
+    // 모달
     const modal = document.querySelector('#modal');
     document.querySelector('#openModal').addEventListener('click', () => modal.style.display='flex');
     document.querySelector('#closeModal').addEventListener('click', () => modal.style.display='none');
+
+    // 탭
+    const tabs = document.querySelectorAll('.tabs button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabs.forEach((tab, idx)=>{
+      tab.addEventListener('click', ()=>{
+        tabs.forEach(t=>t.classList.remove('active'));
+        tabContents.forEach(c=>c.classList.remove('active'));
+        tab.classList.add('active');
+        tabContents[idx].classList.add('active');
+      });
+    });
+
+    // 아코디언
+    document.querySelectorAll('.accordion button').forEach((btn, idx)=>{
+      btn.addEventListener('click', ()=>{
+        btn.nextElementSibling.classList.toggle('show');
+      });
+    });
   </script>
 </body>
 </html>
