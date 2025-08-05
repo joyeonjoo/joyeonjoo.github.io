@@ -30,6 +30,190 @@ header p {
     font-size: 1.1rem;
     color: #ccc;
 }
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background: #191919;
+    backdrop-filter: blur(5px);
+    border-right: 2px solid rgba(255, 255, 255, 0.07);
+    padding: 6px 14px;
+    transition: 0.5s ease;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar .logo-content .logo {
+    opacity: 0;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.sidebar.active .logo-content .logo {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.sidebar .logo i {
+    font-size: 30px;
+    color: crimson;
+    margin-right: 5px;
+}
+
+.sidebar .logo h3 {
+    font-size: 18px;
+    color: gold;
+    font-weight: 500;
+}
+
+.sidebar #btn {
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+.sidebar ul {
+    margin-top: 20px;
+}
+
+.sidebar li {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    line-height: 50px;
+}
+
+.sidebar li.search {
+    margin-bottom: 100px;
+}
+
+.sidebar li input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.sidebar.active li input {
+    padding: 0 20px 0 50px;
+}
+
+.sidebar li .bx-search {
+    position: absolute;
+    font-size: 22px;
+    color: #fff;
+    z-index: 99;
+}
+
+.sidebar li a {
+    color: #fff;
+    border-radius: 6px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.sidebar li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .list-item.active a {
+    background: #327aff;
+}
+
+.sidebar li i {
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .link-name {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.active .link-name {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.2s;
+}
+
+.sidebar .list-logout {
+    position: absolute;
+    bottom: 0;
+    width: 64%;
+    margin: 15px 0;
+}
+
+.sidebar.bx-cart-alt .list-logout {
+    width: 89%;
+}
+
+.sidebar li .tooltip {
+    opacity: 0;
+    position: absolute;
+    left: 130px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 122px;
+    height: 35px;
+    background: #327aff;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    pointer-events: none;
+}
+
+.sidebar li:hover .tooltip {
+    opacity: 1;
+    top: 50%;
+    transition: 0.5s ease;
+}
+
+.sidebar.active li .tooltip {
+    display: none;
+}
+@keyframes animateBg {
+  100% {filter: hue-rotate(360deg);}
+}
+
+@media (max-width: 600px) {
+  .sidebar li.search {margin-bottom: 30px;}
+}
 
 section {
     max-width: 1000px;
@@ -167,4 +351,5 @@ footer {
 footer a {
     color: #777;
     text-decoration: none;
+
 }
