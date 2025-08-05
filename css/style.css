@@ -338,10 +338,10 @@ h2 {
   }
 
 footer {
-    text-align: center;
-    padding: 40px 10px;
+    position: absolute;
+    bottom: 100px;
     color: #777;
-    font-size: 0.9rem;
+    font-size: 12px;
 }
 
 footer a {
@@ -349,6 +349,7 @@ footer a {
     text-decoration: none;
 
 }
+
 
 
 
