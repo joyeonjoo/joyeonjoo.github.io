@@ -91,14 +91,45 @@
       </div>
       <button class="toggle-code">코드 보기 ▼</button>
       <div class="code-section">
-        <h3>JS (Swiper 초기화)</h3>
-        <pre><code class="language-js">
-new Swiper(".gb-list", {
+        <div class="code-tabs">
+          <button class="active">기본 코드</button>
+          <button>Angular 코드</button>
+        </div>
+
+        <div class="code-view active">
+          <h3>JS</h3>
+          <pre><code class="language-js">
+new Swiper(".mySwiper", {
   loop: true,
   pagination: { el: ".swiper-pagination" },
   navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
 });
-        </code></pre>
+          </code></pre>
+        </div>
+
+        <div class="code-view">
+          <h3>slider.component.ts</h3>
+          <pre><code class="language-ts">
+import { Component, AfterViewInit } from '@angular/core';
+declare var Swiper: any;
+
+@Component({
+  selector: 'app-slider',
+  templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.css']
+})
+export class SliderComponent implements AfterViewInit {
+  slides = ['1.jpg','2.jpg','3.jpg'];
+  ngAfterViewInit() {
+    new Swiper('.mySwiper', {
+      loop:true,
+      pagination:{ el:'.swiper-pagination'},
+      navigation:{ nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'}
+    });
+  }
+}
+          </code></pre>
+        </div>
       </div>
     </section>
 
@@ -228,6 +259,7 @@ document.querySelectorAll('.accordion button').forEach((btn, idx)=>{
   </script>
 </body>
 </html>
+
 
 
 
