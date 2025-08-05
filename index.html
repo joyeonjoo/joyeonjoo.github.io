@@ -148,12 +148,37 @@ export class SliderComponent implements AfterViewInit {
       </div>
       <button class="toggle-code">코드 보기 ▼</button>
       <div class="code-section">
-        <h3>JS</h3>
-        <pre><code class="language-js">
+        <div class="code-tabs">
+          <button class="active">기본 코드</button>
+          <button>Angular 코드</button>
+        </div>
+
+        <div class="code-view active">
+          <pre><code class="language-js">
 const modal = document.querySelector('#modal');
 document.querySelector('#openModal').addEventListener('click', () => modal.style.display='flex');
 document.querySelector('#closeModal').addEventListener('click', () => modal.style.display='none');
-        </code></pre>
+          </code></pre>
+        </div>
+
+        <div class="code-view">
+          <h3>modal.component.html</h3>
+          <pre><code class="language-html">
+<button (click)="isOpen=true">모달 열기</button>
+<div class="modal" *ngIf="isOpen">
+  <div class="modal-content">
+    <p>모달 콘텐츠</p>
+    <button (click)="isOpen=false">닫기</button>
+  </div>
+</div>
+          </code></pre>
+          <h3>modal.component.ts</h3>
+          <pre><code class="language-ts">
+export class ModalComponent {
+  isOpen = false;
+}
+          </code></pre>
+        </div>
       </div>
     </section>
 
@@ -259,6 +284,7 @@ document.querySelectorAll('.accordion button').forEach((btn, idx)=>{
   </script>
 </body>
 </html>
+
 
 
 
