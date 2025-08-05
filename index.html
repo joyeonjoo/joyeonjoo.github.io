@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>joyeonjoo - Web Publisher Portfolio</title>
+  <title>퍼블리셔 포트폴리오 (Angular 코드 포함)</title>
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -32,7 +32,7 @@
     .portfolio-project h2 { margin-bottom: 15px; }
     .project-preview { margin-bottom: 20px; }
 
-    /* Swiper 크기 */
+    /* Swiper */
     .swiper { width:100%; max-width:600px; border-radius: 8px; overflow:hidden; }
     .swiper-slide img { width: 100%; display: block; }
 
@@ -54,10 +54,20 @@
       margin-bottom: 20px;
     }
 
-    /* 탭 */
+    /* 코드 탭 */
+    .code-tabs { display:flex; gap:10px; margin-bottom:10px; }
+    .code-tabs button {
+      flex:1; padding:8px; border:none; cursor:pointer;
+      background:#eee; border-radius:6px;
+    }
+    .code-tabs button.active { background:#333; color:#fff; }
+    .code-view { display:none; }
+    .code-view.active { display:block; }
+
+    /* 탭 UI */
     .tabs { display:flex; gap:10px; margin-bottom:10px; }
     .tabs button { flex:1; padding:10px; border:none; cursor:pointer; background:#eee; border-radius:6px; }
-    .tabs button.active { background:#333333; color:#fff; }
+    .tabs button.active { background:#333; color:#fff; }
     .tab-content { display:none; padding:10px; background:#fafafa; border-radius:6px; }
     .tab-content.active { display:block; }
 
@@ -70,15 +80,17 @@
 <body>
 
   <header>
-    <h1>joyeonjoo - Web Publisher Portfolio</h1>
-    <p>웹 퍼블리싱 / UI 구현 / 반응형 & 접근성</p>
+    <h1>Yeonjoo Jo - Web Publisher Portfolio</h1>
+    <p>웹 퍼블리싱 / UI 구현 / Angular + Vanilla JS</p>
   </header>
 
   <main>
+
+    <!-- =================== 프로젝트 1: Swiper =================== -->
     <section class="portfolio-project">
       <h2>상품 슬라이드 (Swiper)</h2>
       <div class="project-preview">
-        <div class="swiper gb-list">
+        <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="img/goods_01.png" class="slide-img" alt="굿즈베이커리 슬라이드 이미지"></div>
             <div class="swiper-slide"><img src="img/goods_02.png" class="slide-img" alt="굿즈베이커리 모달 팝업"></div>
@@ -99,7 +111,7 @@
         <div class="code-view active">
           <h3>JS</h3>
           <pre><code class="language-js">
-new Swiper(".gb-list", {
+new Swiper(".mySwiper", {
   loop: true,
   pagination: { el: ".swiper-pagination" },
   navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
@@ -119,9 +131,9 @@ declare var Swiper: any;
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements AfterViewInit {
-  slides = ['img/goods_01.png','img/goods_01.png','img/goods_01.png'];
+  slides = ['img/goods_01.png','img/goods_02.png','img/goods_03.png'];
   ngAfterViewInit() {
-    new Swiper('.gb-list', {
+    new Swiper('.mySwiper', {
       loop:true,
       pagination:{ el:'.swiper-pagination'},
       navigation:{ nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'}
@@ -133,7 +145,7 @@ export class SliderComponent implements AfterViewInit {
       </div>
     </section>
 
-    <!-- 프로젝트 2: 모달 팝업 -->
+    <!-- =================== 프로젝트 2: 모달 =================== -->
     <section class="portfolio-project">
       <h2>모달 팝업</h2>
       <div class="project-preview">
@@ -162,16 +174,6 @@ document.querySelector('#closeModal').addEventListener('click', () => modal.styl
         </div>
 
         <div class="code-view">
-          <h3>modal.component.html</h3>
-          <pre><code class="language-html">
-<button (click)="isOpen=true">모달 열기</button>
-<div class="modal" *ngIf="isOpen">
-  <div class="modal-content">
-    <p>모달 콘텐츠</p>
-    <button (click)="isOpen=false">닫기</button>
-  </div>
-</div>
-          </code></pre>
           <h3>modal.component.ts</h3>
           <pre><code class="language-ts">
 export class ModalComponent {
@@ -182,7 +184,7 @@ export class ModalComponent {
       </div>
     </section>
 
-    <!-- 프로젝트 3: 탭 UI -->
+    <!-- =================== 프로젝트 3: 탭 UI =================== -->
     <section class="portfolio-project">
       <h2>탭 UI</h2>
       <div class="project-preview">
@@ -204,35 +206,20 @@ export class ModalComponent {
 
         <div class="code-view active">
           <pre><code class="language-js">
-const tabs = document.querySelectorAll('.tabs button');
-const contents = document.querySelectorAll('.tab-content');
-tabs.forEach((tab, idx)=>{
+const uiTabs = document.querySelectorAll('.tabs button'); 
+const tabContents = document.querySelectorAll('.tab-content');
+uiTabs.forEach((tab, idx)=>{
   tab.addEventListener('click', ()=>{
-    tabs.forEach(t=>t.classList.remove('active'));
-    contents.forEach(c=>c.classList.remove('active'));
+    uiTabs.forEach(t=>t.classList.remove('active'));
+    tabContents.forEach(c=>c.classList.remove('active'));
     tab.classList.add('active');
-    contents[idx].classList.add('active');
+    tabContents[idx].classList.add('active');
   });
 });
           </code></pre>
         </div>
 
         <div class="code-view">
-          <h3>tabs.component.html</h3>
-          <pre><code class="language-html">
-<div class="tabs">
-  <button *ngFor="let tab of tabs; let i=index"
-          [class.active]="i===activeIdx"
-          (click)="activeIdx=i">
-    {{tab}}
-  </button>
-</div>
-<div *ngFor="let content of contents; let i=index"
-     class="tab-content"
-     [class.active]="i===activeIdx">
-  {{content}}
-</div>
-          </code></pre>
           <h3>tabs.component.ts</h3>
           <pre><code class="language-ts">
 export class TabsComponent {
@@ -245,7 +232,7 @@ export class TabsComponent {
       </div>
     </section>
 
-    <!-- 프로젝트 4: 아코디언 FAQ -->
+    <!-- =================== 프로젝트 4: 아코디언 =================== -->
     <section class="portfolio-project">
       <h2>FAQ 아코디언</h2>
       <div class="project-preview accordion">
@@ -264,7 +251,7 @@ export class TabsComponent {
 
         <div class="code-view active">
           <pre><code class="language-js">
-document.querySelectorAll('.accordion button').forEach(btn=>{
+document.querySelectorAll('.accordion button').forEach((btn)=>{
   btn.addEventListener('click', ()=>{
     btn.nextElementSibling.classList.toggle('show');
   });
@@ -273,19 +260,12 @@ document.querySelectorAll('.accordion button').forEach(btn=>{
         </div>
 
         <div class="code-view">
-          <h3>accordion.component.html</h3>
-          <pre><code class="language-html">
-<div *ngFor="let faq of faqs">
-  <button (click)="toggle(faq)">{{faq.q}}</button>
-  <div class="accordion-content" *ngIf="faq.open">{{faq.a}}</div>
-</div>
-          </code></pre>
           <h3>accordion.component.ts</h3>
           <pre><code class="language-ts">
 export class AccordionComponent {
   faqs = [
-    {Q.'비밀번호 변경은 어떻게 하나요?', A.'마이페이지>내 정보>회원정보 변경>비밀번호 변경 가능합니다.', open:false},
-    {Q.'굿즈는 어떻게 판매하나요?', A. '스튜디오의 디자인메이커를 사용하여 개발된 굿즈는 컴퍼니의 승인을 받아야합니다.<br>
+    {Q. '비밀번호 변경은 어떻게 하나요?', A. '마이페이지>내 정보>회원정보 변경>비밀번호 변경 가능합니다.', open:false},
+    {Q. '굿즈는 어떻게 판매하나요?', A. '스튜디오의 디자인메이커를 사용하여 개발된 굿즈는 컴퍼니의 승인을 받아야합니다.<br>
    기준에 통과하여 승인된 굿즈는 'IP굿즈 구매하기'스토어에 자동 전시됩니다.', open:false},
   ];
   toggle(faq:any) { faq.open = !faq.open; }
@@ -302,12 +282,12 @@ export class AccordionComponent {
 
   <script>
     // Swiper
-    new Swiper(".gb-list", {
+    new Swiper(".mySwiper", {
       loop: true,
       pagination: { el: ".swiper-pagination" },
       navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
     });
-    
+
     // 코드 보기 토글
     document.querySelectorAll('.toggle-code').forEach(btn=>{
       btn.addEventListener('click', ()=>{
@@ -316,12 +296,12 @@ export class AccordionComponent {
         btn.textContent = code.classList.contains('show') ? '코드 닫기 ▲' : '코드 보기 ▼';
       });
     });
-    
+
     // 코드 탭 전환
     document.querySelectorAll('.code-section').forEach(section=>{
-      const codeTabs = section.querySelectorAll('.code-tabs button'); // 변수명 수정
+      const codeTabs = section.querySelectorAll('.code-tabs button');
       const views = section.querySelectorAll('.code-view');
-    
+
       codeTabs.forEach((tab, idx)=>{
         tab.addEventListener('click', ()=>{
           codeTabs.forEach(t=>t.classList.remove('active'));
@@ -331,24 +311,12 @@ export class AccordionComponent {
         });
       });
     });
-    
+
     // 모달
     const modal = document.querySelector('#modal');
     document.querySelector('#openModal').addEventListener('click', () => modal.style.display='flex');
     document.querySelector('#closeModal').addEventListener('click', () => modal.style.display='none');
-    
-    // 탭 UI (변수명 수정)
-    const uiTabs = document.querySelectorAll('.tabs button'); 
-    const tabContents = document.querySelectorAll('.tab-content');
-    uiTabs.forEach((tab, idx)=>{
-      tab.addEventListener('click', ()=>{
-        uiTabs.forEach(t=>t.classList.remove('active'));
-        tabContents.forEach(c=>c.classList.remove('active'));
-        tab.classList.add('active');
-        tabContents[idx].classList.add('active');
-      });
-    });
-    
+
     // 아코디언
     document.querySelectorAll('.accordion button').forEach((btn)=>{
       btn.addEventListener('click', ()=>{
@@ -358,15 +326,3 @@ export class AccordionComponent {
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
