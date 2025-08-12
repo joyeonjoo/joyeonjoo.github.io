@@ -392,6 +392,11 @@ const dropdown = document.querySelector(".custom-dropdown");
     items[index].setAttribute("aria-selected", "true");
     selected.textContent = items[index].textContent + " ▼";
   }
+    document.addEventListener('click', e => {
+      if (!dropdown.contains(e.target)) {
+        closeDropdown();
+      }
+    });
           </code></pre>
         </div>
 
@@ -545,11 +550,17 @@ export class DropdownComponent {
       items[index].setAttribute("aria-selected", "true");
       selected.textContent = items[index].textContent + " ▼";
     }
-
+    
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      toggleDropdown(false);
+    }
+  });
     
   </script>
 </body>
 </html>
+
 
 
 
