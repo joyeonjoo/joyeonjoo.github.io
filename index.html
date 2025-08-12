@@ -72,27 +72,49 @@
     .tab-content.active { display:block; }
 
     /* 아코디언 */
-    .accordion button { width:100%; text-align:left; background:#eee; border:none; padding:10px; margin-top:5px; border-radius:6px; cursor:pointer;}
-    .accordion-content { display:none; padding:10px; background:#fafafa; border-radius:6px; margin-top:5px;}
-    .accordion-content.show { display:block; }
+    .accordion button { 
+      width:100%; 
+      text-align:left; 
+      background:#eee; 
+      border:none; 
+      padding:10px; 
+      margin-top:5px; 
+      border-radius:6px; 
+      cursor:pointer;}
+    .accordion-content { 
+      display:none; 
+      padding:10px; 
+      background:#fafafa; 
+      border-radius:6px; 
+      margin-top:5px;}
+    .accordion-content.show { 
+      display:block; 
+    }
 
      /* 커스텀 드롭다운 스타일 */
     .custom-dropdown {
       width: 220px; user-select:none;
-      border: 1px solid #ccc; border-radius:6px;
-      background:#fff; cursor:pointer;
+      border: 1px solid #ccc; 
+      border-radius:6px;
+      background:#fff; 
+      cursor:pointer;
       position: relative;
+      margin-bottom:10px;
     }
     .selected {
       padding: 10px;
     }
     .dropdown-options {
-      margin: 0; padding: 0; list-style:none;
-      border: 1px solid #ccc; border-top:none;
+      margin: 0; 
+      padding: 0; 
+      list-style:none;
+      border: 1px solid #ccc; 
+      border-top:none;
       position: absolute;
       width: 100%;
       background: #fff;
-      max-height: 150px; overflow-y: auto;
+      max-height: 150px; 
+      overflow-y: auto;
       box-sizing: border-box;
       z-index: 10;
     }
@@ -100,14 +122,14 @@
       padding: 10px;
     }
     .dropdown-options li[aria-selected="true"] {
-      background: #007bff; color: #fff;
+      background: #007bff;
+      color: #fff;
     }
     .dropdown-options li:hover, .dropdown-options li:focus {
       background: #d0e7ff;
       outline: none;
     }
-  
-   
+     
   </style>
 </head>
 <body>
@@ -561,6 +583,7 @@ export class AccordionComponent {
   </script>
 </body>
 </html>
+
 
 
 
