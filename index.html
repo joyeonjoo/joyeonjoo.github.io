@@ -75,6 +75,59 @@
     .accordion button { width:100%; text-align:left; background:#eee; border:none; padding:10px; margin-top:5px; border-radius:6px; cursor:pointer;}
     .accordion-content { display:none; padding:10px; background:#fafafa; border-radius:6px; margin-top:5px;}
     .accordion-content.show { display:block; }
+
+     /* 커스텀 드롭다운 스타일 */
+    .custom-dropdown {
+      width: 220px; user-select:none;
+      border: 1px solid #ccc; border-radius:6px;
+      background:#fff; cursor:pointer;
+      position: relative;
+    }
+    .selected {
+      padding: 10px;
+    }
+    .dropdown-options {
+      margin: 0; padding: 0; list-style:none;
+      border: 1px solid #ccc; border-top:none;
+      position: absolute;
+      width: 100%;
+      background: #fff;
+      max-height: 150px; overflow-y: auto;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    .dropdown-options li {
+      padding: 10px;
+    }
+    .dropdown-options li[aria-selected="true"] {
+      background: #007bff; color: #fff;
+    }
+    .dropdown-options li:hover, .dropdown-options li:focus {
+      background: #d0e7ff;
+      outline: none;
+    }
+  
+    /* 스틱키 헤더 */
+    .sticky-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #333;
+      color: #fff;
+      padding: 15px 20px;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+      z-index: 100;
+    }
+    main.content-padding { padding-top: 70px; }
+  
+    /* 폼 스타일 */
+    form { max-width: 320px; }
+    input {
+      width: 100%; padding: 8px; margin-bottom: 5px;
+      border-radius: 5px; border: 1px solid #ccc;
+    }
+    input:focus { outline: 2px solid #007bff; }
+    small { font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -275,6 +328,193 @@ export class AccordionComponent {
       </div>
     </section>
 
+    <header class="sticky-header">
+    <h1>스틱키 헤더 예제</h1>
+  </header>
+  <main class="content-padding">
+  
+    <!-- 1. 커스텀 드롭다운 -->
+    <section>
+      <h2>커스텀 드롭다운</h2>
+      <div class="custom-dropdown" tabindex="0" aria-haspopup="listbox" aria-expanded="false" role="combobox" aria-labelledby="dropdown-label">
+        <div id="dropdown-label" class="selected">선택하세요 ▼</div>
+        <ul role="listbox" tabindex="-1" class="dropdown-options" hidden>
+          <li role="option" tabindex="0" aria-selected="false">옵션 1</li>
+          <li role="option" tabindex="0" aria-selected="false">옵션 2</li>
+          <li role="option" tabindex="0" aria-selected="false">옵션 3</li>
+        </ul>
+      </div>
+
+      <button class="toggle-code">코드 보기 ▼</button>
+      <div class="code-section">
+        <div class="code-tabs">
+          <button class="active">기본 코드</button>
+          <button>Angular 코드</button>
+        </div>
+
+        <div class="code-view active">
+          <pre><code class="language-html">
+// HTML & CSS & JS를 한 파일에 썼어요. <br>
+// 위에서 커스텀 드롭다운 전체 코드 참고하세요.
+          </code></pre>
+        </div>
+
+        <div class="code-view">
+          <pre><code class="language-ts">
+export class DropdownComponent {
+  selected = '선택하세요 ▼';
+  options = ['옵션 1', '옵션 2', '옵션 3'];
+  isOpen = false;
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+  select(index: number) {
+    this.selected = this.options[index] + ' ▼';
+    this.isOpen = false;
+  }
+}
+          </code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 스틱키 헤더 -->
+    <section style="margin-top: 120px;">
+      <h2>스틱키 헤더</h2>
+      <p>스크롤 내릴 때 헤더 숨기고, 올리면 다시 보여줌</p>
+
+      <button class="toggle-code">코드 보기 ▼</button>
+      <div class="code-section">
+        <div class="code-tabs">
+          <button class="active">기본 코드</button>
+          <button>Angular 코드</button>
+        </div>
+
+        <div class="code-view active">
+          <pre><code class="language-js">
+let lastScroll = 0;
+const header = document.querySelector('.sticky-header');
+
+window.addEventListener('scroll', () => {
+  const current = window.pageYOffset;
+  if (current > lastScroll && current > 100) {
+    header.style.transform = 'translateY(-100%)';
+  } else {
+    header.style.transform = 'translateY(0)';
+  }
+  lastScroll = current;
+});
+          </code></pre>
+        </div>
+
+        <div class="code-view">
+          <pre><code class="language-ts">
+export class StickyHeaderComponent {
+  lastScroll = 0;
+  hidden = false;
+
+  onScroll(event: Event) {
+    const scrollTop = window.pageYOffset;
+    if (scrollTop > this.lastScroll && scrollTop > 100) {
+      this.hidden = true;
+    } else {
+      this.hidden = false;
+    }
+    this.lastScroll = scrollTop;
+  }
+}
+          </code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 폼 유효성 검사 -->
+    <section style="margin-top: 120px;">
+      <h2>폼 유효성 검사</h2>
+      <form id="contactForm" novalidate>
+        <label for="email">이메일 (필수)</label><br />
+        <input type="email" id="email" name="email" required aria-describedby="emailHelp" /><br />
+        <small id="emailHelp" style="color:red; display:none;">유효한 이메일을 입력하세요.</small><br />
+
+        <label for="password">비밀번호 (6자리 이상)</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="6"
+        /><br />
+        <small id="passwordHelp" style="color:red; display:none;">
+          6자리 이상이어야 합니다.
+        </small
+        ><br />
+
+        <button type="submit">제출</button>
+      </form>
+
+      <button class="toggle-code">코드 보기 ▼</button>
+      <div class="code-section">
+        <div class="code-tabs">
+          <button class="active">기본 코드</button>
+          <button>Angular 코드</button>
+        </div>
+
+        <div class="code-view active">
+          <pre><code class="language-js">
+const form = document.getElementById('contactForm');
+const email = form.email;
+const password = form.password;
+const emailHelp = document.getElementById('emailHelp');
+const passwordHelp = document.getElementById('passwordHelp');
+
+email.addEventListener('input', () => {
+  const valid = email.validity.valid;
+  emailHelp.style.display = valid ? 'none' : 'block';
+});
+
+password.addEventListener('input', () => {
+  const valid = password.value.length >= 6;
+  passwordHelp.style.display = valid ? 'none' : 'block';
+});
+
+form.addEventListener('submit', (e) => {
+  if (!email.validity.valid || password.value.length < 6) {
+    e.preventDefault();
+    alert('입력값을 확인해주세요.');
+  }
+});
+          </code></pre>
+        </div>
+
+        <div class="code-view">
+          <pre><code class="language-ts">
+export class FormValidationComponent {
+  email = '';
+  password = '';
+
+  validateEmail() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(this.email);
+  }
+
+  validatePassword() {
+    return this.password.length >= 6;
+  }
+
+  onSubmit() {
+    if (!this.validateEmail() || !this.validatePassword()) {
+      alert('입력값을 확인해주세요.');
+      return false;
+    }
+    // 제출 처리
+  }
+}
+          </code></pre>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Swiper JS -->
@@ -336,9 +576,113 @@ export class AccordionComponent {
         btn.nextElementSibling.classList.toggle('show');
       });
     });
+
+     // 커스텀 드롭다운 스크립트
+    const dropdown = document.querySelector(".custom-dropdown");
+    const selected = dropdown.querySelector(".selected");
+    const options = dropdown.querySelector(".dropdown-options");
+    const items = options.querySelectorAll("li");
+
+    function toggleDropdown(open) {
+      if (open) {
+        options.hidden = false;
+        dropdown.setAttribute("aria-expanded", "true");
+        items[0].focus();
+      } else {
+        options.hidden = true;
+        dropdown.setAttribute("aria-expanded", "false");
+        dropdown.focus();
+      }
+    }
+
+    dropdown.addEventListener("click", () => {
+      toggleDropdown(options.hidden);
+    });
+
+    dropdown.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleDropdown(options.hidden);
+      }
+      if (e.key === "ArrowDown" && options.hidden) {
+        e.preventDefault();
+        toggleDropdown(true);
+      }
+    });
+
+    items.forEach((item, idx) => {
+      item.addEventListener("click", () => {
+        selectOption(idx);
+        toggleDropdown(false);
+      });
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          selectOption(idx);
+          toggleDropdown(false);
+        }
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          if (idx < items.length - 1) items[idx + 1].focus();
+        }
+        if (e.key === "ArrowUp") {
+          e.preventDefault();
+          if (idx > 0) items[idx - 1].focus();
+          else dropdown.focus();
+        }
+        if (e.key === "Escape") {
+          toggleDropdown(false);
+        }
+      });
+    });
+
+    function selectOption(index) {
+      items.forEach((item) => item.setAttribute("aria-selected", "false"));
+      items[index].setAttribute("aria-selected", "true");
+      selected.textContent = items[index].textContent + " ▼";
+    }
+
+    // 스틱키 헤더 스크립트
+    let lastScroll = 0;
+    const header = document.querySelector(".sticky-header");
+
+    window.addEventListener("scroll", () => {
+      const current = window.pageYOffset;
+      if (current > lastScroll && current > 100) {
+        header.style.transform = "translateY(-100%)";
+      } else {
+        header.style.transform = "translateY(0)";
+      }
+      lastScroll = current;
+    });
+
+    // 폼 유효성 검사 스크립트
+    const form = document.getElementById("contactForm");
+    const email = form.email;
+    const password = form.password;
+    const emailHelp = document.getElementById("emailHelp");
+    const passwordHelp = document.getElementById("passwordHelp");
+
+    email.addEventListener("input", () => {
+      const valid = email.validity.valid;
+      emailHelp.style.display = valid ? "none" : "block";
+    });
+
+    password.addEventListener("input", () => {
+      const valid = password.value.length >= 6;
+      passwordHelp.style.display = valid ? "none" : "block";
+    });
+
+    form.addEventListener("submit", (e) => {
+      if (!email.validity.valid || password.value.length < 6) {
+        e.preventDefault();
+        alert("입력값을 확인해주세요.");
+      }
+    });
   </script>
 </body>
 </html>
+
 
 
 
