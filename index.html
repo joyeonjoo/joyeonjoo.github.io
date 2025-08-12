@@ -313,10 +313,10 @@ export class AccordionComponent {
       <h2>커스텀 드롭다운</h2>
       <div class="custom-dropdown" tabindex="0" aria-haspopup="listbox" aria-expanded="false" role="combobox" aria-labelledby="dropdown-label">
         <div id="dropdown-label" class="selected">선택하세요 ▼</div>
-        <ul role="listbox" tabindex="-1" class="dropdown-options" hidden>
-          <li role="option" tabindex="0" aria-selected="false">옵션 1</li>
-          <li role="option" tabindex="0" aria-selected="false">옵션 2</li>
-          <li role="option" tabindex="0" aria-selected="false">옵션 3</li>
+        <ul role="listbox" class="dropdown-options" hidden>
+          <li role="option" tabindex="-1" aria-selected="false">옵션 1</li>
+          <li role="option" tabindex="-1" aria-selected="false">옵션 2</li>
+          <li role="option" tabindex="-1" aria-selected="false">옵션 3</li>
         </ul>
       </div>
 
@@ -330,10 +330,9 @@ export class AccordionComponent {
         <div class="code-view active">
           <pre><code class="language-js">
 const dropdown = document.querySelector(".custom-dropdown");
-  const selected = dropdown.querySelector(".selected");
-  const options = dropdown.querySelector(".dropdown-options");
-  const items = options.querySelectorAll("li");
-
+const selected = dropdown.querySelector(".selected");
+const options = dropdown.querySelector(".dropdown-options");
+const items = options.querySelectorAll("li");
   function toggleDropdown(open) {
     if (open) {
       options.hidden = false;
@@ -386,17 +385,17 @@ const dropdown = document.querySelector(".custom-dropdown");
       }
     });
   });
-
+          
   function selectOption(index) {
     items.forEach((item) => item.setAttribute("aria-selected", "false"));
     items[index].setAttribute("aria-selected", "true");
     selected.textContent = items[index].textContent + " ▼";
   }
-    document.addEventListener('click', e => {
-      if (!dropdown.contains(e.target)) {
-        closeDropdown();
-      }
-    });
+  document.addEventListener('click', e => {
+    if (!dropdown.contains(e.target)) {
+      closeDropdown();
+    }
+  });
           </code></pre>
         </div>
 
@@ -560,6 +559,7 @@ export class DropdownComponent {
   </script>
 </body>
 </html>
+
 
 
 
