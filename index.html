@@ -206,7 +206,7 @@ export class SliderComponent implements AfterViewInit {
       <div class="project-preview">
         <button id="openModal">모달 열기</button>
         <div id="modal" style="display:none; position:fixed; top:0;left:0;width:100%;height:100%;
-          background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+          background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:999; overflow:hidden;">
           <div style="background:#fff; padding:20px; border-radius:10px; min-width:200px;">
             <p>모달 콘텐츠</p>
             <button id="closeModal">닫기</button>
@@ -583,6 +583,7 @@ export class AccordionComponent {
   </script>
 </body>
 </html>
+
 
 
 
