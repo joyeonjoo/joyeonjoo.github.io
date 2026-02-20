@@ -16,7 +16,6 @@
 
     main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
-    /* 프로젝트 섹션 - 초기 상태는 투명하게 (GSAP 등장 효과용) */
     .portfolio-project {
       background: #fff; border-radius: 16px; padding: 30px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 50px;
@@ -381,16 +380,32 @@ export class DropdownComponent {
     };
 
     // 5. 탭 UI (Fade 효과)
-    const tabs = document.querySelectorAll('.tabs button');
-    const contents = document.querySelectorAll('.tab-content');
-    tabs.forEach((tab, idx) => {
-      tab.onclick = () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => { c.classList.remove('active'); gsap.set(c, { opacity: 0 }); });
+    // 코드 탭 전환
+    document.querySelectorAll('.code-section').forEach(section=>{
+      const codeTabs = section.querySelectorAll('.code-tabs button');
+      const views = section.querySelectorAll('.code-view');
+
+      codeTabs.forEach((tab, idx)=>{
+        tab.addEventListener('click', ()=>{
+          codeTabs.forEach(t=>t.classList.remove('active'));
+          views.forEach(v=>v.classList.remove('active'));
+          tab.classList.add('active');
+          views[idx].classList.add('active');
+        });
+      });
+    });
+
+    //탭
+
+    const uiTabs = document.querySelectorAll('.tabs button'); 
+    const tabContents = document.querySelectorAll('.tab-content');
+    uiTabs.forEach((tab, idx)=>{
+      tab.addEventListener('click', ()=>{
+        uiTabs.forEach(t=>t.classList.remove('active'));
+        tabContents.forEach(c=>c.classList.remove('active'));
         tab.classList.add('active');
-        contents[idx].classList.add('active');
-        gsap.to(contents[idx], { opacity: 1, duration: 0.5 });
-      };
+        tabContents[idx].classList.add('active');
+      });
     });
 
     // 6. 커스텀 드롭다운 (Slide 효과)
@@ -432,4 +447,5 @@ export class DropdownComponent {
   </script>
 </body>
 </html>
+
 
