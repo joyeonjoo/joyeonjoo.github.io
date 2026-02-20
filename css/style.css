@@ -148,6 +148,70 @@ header{
   100% {filter: hue-rotate(360deg);}
 }
 
+.skills-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.skills-container {
+  display: flex;
+  gap: 50px;
+}
+
+.skill-card {
+  text-align: center;
+}
+
+/* 원형 박스 설정 */
+.circle-box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.circle-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* 12시 방향부터 시작하도록 회전 */
+}
+
+circle {
+  fill: none;
+  stroke-width: 8; /* 선 두께 */
+  stroke-linecap: round; /* 선 끝을 둥글게 */
+}
+
+.circle-svg .bg {
+  stroke: #222;
+}
+
+.circle-svg .progress {
+  stroke: #3182f6;
+  stroke-dasharray: 283; 
+  /* --percent 변수에 따라 offset 조절 */
+  stroke-dashoffset: calc(283 - (283 * var(--percent)) / 100);
+  transition: stroke-dashoffset 1s ease-out;
+  
+  stroke: url(#skill-gradient); 
+}
+
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ccc;
+}
+
 .content-area{
     flex:auto;
 }
@@ -320,6 +384,7 @@ footer a {
       border-radius: 8px;
       margin-bottom: 20px;
     }
+
 
 
 
