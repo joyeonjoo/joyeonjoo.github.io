@@ -64,23 +64,19 @@ circle {
   stroke: #00c3d0;
 }
 
-.circle-svg .progress {
-  stroke: #3182f6;
-  stroke-dasharray: 283; 
-  stroke-dashoffset: calc(283 - (283 * var(--percent)) / 100);
-  transition: stroke-dashoffset 1s ease-out;
-  
-  stroke: url(#skill-gradient); 
+/* 게이지 원 스타일 */
+.progress {
+  fill: none;
+  stroke: #3182f6; /* 포인트 컬러 */
+  stroke-width: 8;
+  stroke-linecap: round;
+  /* 부드러운 애니메이션 효과 */
+  transition: stroke-dashoffset 1.5s ease-in-out; 
 }
 
-
+/* 숫자가 커지는 느낌을 주고 싶다면 추가 */
 .number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .skill-name {
@@ -261,6 +257,7 @@ footer a {
       border-radius: 8px;
       margin-bottom: 20px;
     }
+
 
 
 
