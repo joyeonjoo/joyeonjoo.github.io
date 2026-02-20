@@ -149,7 +149,7 @@ header{
 }
 
 .skills-section h2 {
-  font-size: 2.5rem;
+  font-size: 1rem;
   margin-bottom: 40px;
 }
 
@@ -183,13 +183,12 @@ circle {
 }
 
 .circle-svg .bg {
-  stroke: #222;
+  stroke: #00c3d0;
 }
 
 .circle-svg .progress {
   stroke: #3182f6;
   stroke-dasharray: 283; 
-  /* --percent 변수에 따라 offset 조절 */
   stroke-dashoffset: calc(283 - (283 * var(--percent)) / 100);
   transition: stroke-dashoffset 1s ease-out;
   
@@ -384,6 +383,7 @@ footer a {
       border-radius: 8px;
       margin-bottom: 20px;
     }
+
 
 
 
