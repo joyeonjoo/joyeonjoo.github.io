@@ -25,130 +25,8 @@ body {
 }
 header{
 }
-.sidebar {
-    flex:auto;
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 80px;
-    height: 100vh;
-    background: #191919;
-    backdrop-filter: blur(5px);
-    border-right: 2px solid rgba(255, 255, 255, 0.07);
-    padding: 6px 14px;
-    transition: 0.5s ease;
-    z-index:10;
-}
 
-.sidebar.active {
-    width: 240px;
-}
-
-.sidebar h3 div {
-    font-size: 18px;
-    color: gold;
-    font-weight: 500;
-}
-
-.sidebar #btn {
-    position: relative;
-    transform: translateX(-50%);
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    cursor: pointer;
-    background:none;
-    border:0;
-}
-
-.sidebar.active #btn {
-    
-}
-
-.sidebar ul {
-    margin-top: 20px;
-}
-
-.sidebar li {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 5px 0;
-    line-height: 50px;
-    cursor: pointer;
-}
-
-.sidebar li a {
-    color: #fff;
-    border-radius: 6px;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    transition: 0.5s ease;    
-    cursor: pointer;
-}
-
-.sidebar li a:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.sidebar .list-item.active a {
-    background: #327aff;
-}
-
-.sidebar li i {
-    min-width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-}
-
-.sidebar .link-name {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.sidebar.active .link-name {
-    opacity: 1;
-    pointer-events: auto;
-    transition-delay: 0.2s;
-}
-
-.sidebar li .tooltip {
-    opacity: 0;
-    position: absolute;
-    left: 130px;
-    top: 0;
-    transform: translate(-50%, -50%);
-    width: 122px;
-    height: 35px;
-    background: #327aff;
-    border-radius: 6px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    text-align: center;
-    line-height: 35px;
-    pointer-events: none;
-}
-
-.sidebar li:hover .tooltip {
-    opacity: 1;
-    top: 50%;
-    transition: 0.5s ease;
-}
-
-.sidebar.active li .tooltip {
-    display: none;
-}
-@keyframes animateBg {
-  100% {filter: hue-rotate(360deg);}
-}
-
-.skills-section h2 {
+.skills-section h3 {
   font-size: 1rem;
   margin-bottom: 40px;
 }
@@ -383,6 +261,7 @@ footer a {
       border-radius: 8px;
       margin-bottom: 20px;
     }
+
 
 
 
