@@ -165,8 +165,8 @@ header{
 /* 원형 박스 설정 */
 .circle-box {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 20px;
 }
 
@@ -384,6 +384,7 @@ footer a {
       border-radius: 8px;
       margin-bottom: 20px;
     }
+
 
 
 
