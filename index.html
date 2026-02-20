@@ -84,7 +84,7 @@
 
   <main>
     <section class="portfolio-project">
-      <h2>상품 슬라이드 (Swiper + GSAP)</h2>
+      <h3>상품 슬라이드 (Swiper)</h3>
       <div class="project-preview">
         <div class="swiper pf-swiper">
           <div class="swiper-wrapper">
@@ -97,7 +97,7 @@
                     <div class="circle-box">
                       <svg class="circle-svg" viewBox="0 0 100 100">
                         <circle class="bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="progress" cx="50" cy="50" r="45" style="95%"></circle>
+                        <circle class="progress" cx="50" cy="50" r="45" data-target="90"></circle>
                       </svg>
                       <div class="number">4.0</div>
                     </div>
@@ -108,7 +108,7 @@
                     <div class="circle-box">
                       <svg class="circle-svg" viewBox="0 0 100 100">
                         <circle class="bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="progress" cx="50" cy="50" r="45" style="90%"></circle>
+                        <circle class="progress" cx="50" cy="50" r="45" data-target="95"></circle>
                       </svg>
                       <div class="number">4.8</div>
                     </div>
@@ -118,7 +118,7 @@
                     <div class="circle-box">
                       <svg class="circle-svg" viewBox="0 0 100 100">
                         <circle class="bg" cx="50" cy="50" r="45"></circle>
-                        <circle class="progress" cx="50" cy="50" r="45" style="90%"></circle>
+                        <circle class="progress" cx="50" cy="50" r="45" data-target="90"></circle>
                       </svg>
                       <div class="number">4.8</div>
                     </div>
@@ -486,9 +486,28 @@ export class DropdownComponent {
         if(section.style.display === 'block') gsap.from(section, { opacity: 0, y: -10, duration: 0.4 });
       };
     });
+    
+    const progressCircles = document.querySelectorAll('.progress');
+
+    progressCircles.forEach(circle => {
+      const targetPercent = circle.getAttribute('data-target'); // 80 같은 숫자 가져오기
+      const radius = circle.r.baseVal.value; // 반지름 45
+      const circumference = 2 * Math.PI * radius; // 둘레 계산 (약 282.7)
+      
+     
+      circle.style.strokeDasharray = circumference;
+      circle.style.strokeDashoffset = circumference;
+      
+     
+      setTimeout(() => {
+        const offset = circumference - (targetPercent / 100 * circumference);
+        circle.style.strokeDashoffset = offset;
+      }, 100);
+    });
   </script>
 </body>
 </html>
+
 
 
 
