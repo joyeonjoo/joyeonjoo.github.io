@@ -104,8 +104,28 @@
         <div class="code-view active">
           <pre><code class="language-js">new Swiper(".pf-swiper", { loop: true, pagination: { el: ".swiper-pagination" } });</code></pre>
         </div>
-        <div class="code-view">
-          <pre><code class="language-ts">// Angular AfterViewInit에서 Swiper 호출</code></pre>
+       <div class="code-view">
+          <h3>slider.component.ts</h3>
+          <pre><code class="language-ts">
+import { Component, AfterViewInit } from '@angular/core';
+declare var Swiper: any;
+
+@Component({
+  selector: 'app-slider',
+  templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.css']
+})
+export class SliderComponent implements AfterViewInit {
+  slides = ['img/goods_01.png','img/goods_02.png','img/goods_03.png'];
+  ngAfterViewInit() {
+    new Swiper('.pf-swiper', {
+      loop:true,
+      pagination:{ el:'.swiper-pagination'},
+      navigation:{ nextEl:'.swiper-btn-next', prevEl:'.swiper-btn-prev'}
+    });
+  }
+}
+          </code></pre>
         </div>
       </div>
     </section>
@@ -123,7 +143,29 @@
         </div>
       </div>
       <button class="toggle-code">코드 보기 ▼</button>
-      <div class="code-section">...코드 생략...</div>
+      <div class="code-section">
+        <div class="code-tabs">
+          <button class="active">기본 코드</button>
+          <button>Angular 코드</button>
+        </div>
+
+        <div class="code-view active">
+          <pre><code class="language-js">
+const modal = document.querySelector('#modal');
+document.querySelector('#openModal').addEventListener('click', () => modal.style.display='flex');
+document.querySelector('#closeModal').addEventListener('click', () => modal.style.display='none');
+          </code></pre>
+        </div>
+
+        <div class="code-view">
+          <h3>modal.component.ts</h3>
+          <pre><code class="language-ts">
+export class ModalComponent {
+  isOpen = false;
+}
+          </code></pre>
+        </div>
+      </div>
     </section>
 
     <section class="portfolio-project">
@@ -139,7 +181,38 @@
         <div class="tab-content">사용자 중심의 UI를 설계합니다.</div>
       </div>
       <button class="toggle-code">코드 보기 ▼</button>
-      <div class="code-section">...코드 생략...</div>
+      <div class="code-section">
+        <div class="code-tabs">
+          <button class="active">기본 코드</button>
+          <button>Angular 코드</button>
+        </div>
+
+        <div class="code-view active">
+          <pre><code class="language-js">
+const uiTabs = document.querySelectorAll('.tabs button'); 
+const tabContents = document.querySelectorAll('.tab-content');
+uiTabs.forEach((tab, idx)=>{
+  tab.addEventListener('click', ()=>{
+    uiTabs.forEach(t=>t.classList.remove('active'));
+    tabContents.forEach(c=>c.classList.remove('active'));
+    tab.classList.add('active');
+    tabContents[idx].classList.add('active');
+  });
+});
+          </code></pre>
+        </div>
+
+        <div class="code-view">
+          <h3>tabs.component.ts</h3>
+          <pre><code class="language-ts">
+export class TabsComponent {
+  tabs = ['탭1','탭2','탭3'];
+  contents = ['탭1 내용','탭2 내용','탭3 내용'];
+  activeIdx = 0;
+}
+          </code></pre>
+        </div>
+      </div>
     </section>
 
     <section class="portfolio-project">
@@ -164,6 +237,102 @@
         <div class="accordion-content">A. 매우 뛰어납니다. 컴포넌트 생명주기에 맞춰 제어하기 편리합니다.</div>
       </div>
       <button class="toggle-code">코드 보기 ▼</button>
+      <div class="code-section">
+        <div class="code-tabs">
+          <button class="active">기본 코드</button>
+          <button>Angular 코드</button>
+        </div>
+
+        <div class="code-view active">
+          <pre><code class="language-js">
+const dropdown = document.querySelector(".custom-dropdown");
+const selected = dropdown.querySelector(".selected");
+const options = dropdown.querySelector(".dropdown-options");
+const items = options.querySelectorAll("li");
+  function toggleDropdown(open) {
+    if (open) {
+      options.hidden = false;
+      dropdown.setAttribute("aria-expanded", "true");
+      items[0].focus();
+    } else {
+      options.hidden = true;
+      dropdown.setAttribute("aria-expanded", "false");
+      dropdown.focus();
+    }
+  }
+
+  dropdown.addEventListener("click", () => {
+    toggleDropdown(options.hidden);
+  });
+
+  dropdown.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleDropdown(options.hidden);
+    }
+    if (e.key === "ArrowDown" && options.hidden) {
+      e.preventDefault();
+      toggleDropdown(true);
+    }
+  });
+
+  items.forEach((item, idx) => {
+    item.addEventListener("click", () => {
+      selectOption(idx);
+      toggleDropdown(false);
+    });
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        selectOption(idx);
+        toggleDropdown(false);
+      }
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        if (idx < items.length - 1) items[idx + 1].focus();
+      }
+      if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (idx > 0) items[idx - 1].focus();
+        else dropdown.focus();
+      }
+      if (e.key === "Escape") {
+        toggleDropdown(false);
+      }
+    });
+  });
+
+  function selectOption(index) {
+    items.forEach((item) => item.setAttribute("aria-selected", "false"));
+    items[index].setAttribute("aria-selected", "true");
+    selected.textContent = items[index].textContent + " ▼";
+  }
+  document.addEventListener('click', e => {
+    if (!dropdown.contains(e.target)) {
+      closeDropdown();
+    }
+  });
+          </code></pre>
+        </div>
+
+        <div class="code-view">
+          <pre><code class="language-ts">
+export class DropdownComponent {
+  selected = '선택하세요 ▼';
+  options = ['옵션 1', '옵션 2', '옵션 3'];
+  isOpen = false;
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+  select(index: number) {
+    this.selected = this.options[index] + ' ▼';
+    this.isOpen = false;
+  }
+}
+          </code></pre>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -263,3 +432,4 @@
   </script>
 </body>
 </html>
+
