@@ -218,6 +218,85 @@ gsap.to(circle, { strokeDashoffset: offset, duration: 2 });</code></pre>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-  
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    hljs.highlightAll();
+
+    // 1. Header Animation
+    gsap.from("#main-header h1", { opacity: 0, y: 30, duration: 1.2, ease: "power4.out" });
+    gsap.from("#main-header p", { opacity: 0, y: 20, duration: 1, delay: 0.3 });
+
+    // 2. Scroll Animation (Nykim Style)
+    gsap.utils.toArray('.portfolio-project').forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 50,
+        rotationX: -5,
+        duration: 1,
+        ease: "power2.out"
+      });
+    });
+
+    // 3. Circle Progress Animation
+    const animateCircles = () => {
+      document.querySelectorAll('.progress').forEach(circle => {
+        const target = circle.getAttribute('data-target');
+        const radius = circle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+        
+        circle.style.strokeDasharray = circumference;
+        circle.style.strokeDashoffset = circumference;
+
+        ScrollTrigger.create({
+          trigger: circle,
+          start: "top 85%",
+          onEnter: () => {
+            const offset = circumference - (target / 100 * circumference);
+            gsap.to(circle, { strokeDashoffset: offset, duration: 1.5, ease: "power2.inOut" });
+          }
+        });
+      });
+    };
+    animateCircles();
+
+    // 4. Modal Logic
+    const modal = document.querySelector('#modal');
+    const modalWin = document.querySelector('.modal-window');
+    document.querySelector('#openModal').onclick = () => {
+      modal.style.display = 'flex';
+      gsap.fromTo(modal, {backgroundColor: "rgba(0,0,0,0)"}, {backgroundColor: "rgba(0,0,0,0.8)", duration: 0.4});
+      gsap.fromTo(modalWin, {scale: 0.8, opacity: 0}, {scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)"});
+    };
+    document.querySelector('#closeModal').onclick = () => {
+      gsap.to(modal, {opacity: 0, duration: 0.3, onComplete: () => {
+        modal.style.display = 'none'; gsap.set(modal, {opacity: 1});
+      }});
+    };
+
+    // 5. Tabs Logic
+    document.querySelectorAll('.tabs button').forEach((btn, idx) => {
+      btn.onclick = () => {
+        const container = btn.closest('.portfolio-project');
+        container.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+        container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        container.querySelectorAll('.tab-content')[idx].classList.add('active');
+      };
+    });
+
+    // 6. Code Toggle
+    document.querySelectorAll('.toggle-code').forEach(btn => {
+      btn.onclick = () => {
+        const section = btn.nextElementSibling;
+        const isHidden = window.getComputedStyle(section).display === 'none';
+        section.style.display = isHidden ? 'block' : 'none';
+        if(isHidden) gsap.from(section, {opacity: 0, y: -10, duration: 0.3});
+      };
+    });
+  </script>
 </body>
 </html>
