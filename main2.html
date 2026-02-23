@@ -9,208 +9,199 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
   
   <style>
+    /* 폰트 및 기본 설정 */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
     :root {
-      --primary-color: #4a90e2;
-      --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      --card-bg: rgba(255, 255, 255, 0.9);
-      --text-main: #2d3436;
-      --text-sub: #636e72;
+      --point-color: #3b82f6; /* 포인트 블루 */
+      --bg-color: #fcfcfc;
+      --border-color: #e5e7eb;
+      --text-dark: #111827;
+      --text-light: #6b7280;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
-      font-family: "Pretendard", -apple-system, sans-serif; 
-      background: var(--bg-gradient); 
-      color: var(--text-main); 
+      font-family: 'Noto Sans KR', sans-serif; 
+      background: var(--bg-color); 
+      color: var(--text-dark); 
+      overflow-x: hidden;
       line-height: 1.6;
-      min-height: 100vh;
     }
 
-    /* Header */
+    /* Header: nykim.net 스타일의 큼직한 타이포그래피 */
     header { 
-      height: 60vh; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center;
+      padding: 15vh 20px 10vh;
       text-align: center;
     }
     header h1 { 
-      font-size: clamp(2.5rem, 8vw, 4rem); 
-      font-weight: 800; 
-      letter-spacing: -1px;
-      margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3rem, 10vw, 6rem); 
+      line-height: 1;
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
-    header p { font-size: 1.2rem; color: var(--text-sub); font-weight: 300; }
+    header p { font-size: 1.2rem; color: var(--text-light); letter-spacing: 2px; }
 
-    /* Main Layout */
-    main { max-width: 1100px; margin: 0 auto; padding: 0 20px 100px; }
+    /* Main Container */
+    main { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    /* Portfolio Card */
+    /* Project Section: 깔끔한 라인 카드 */
     .portfolio-project {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      padding: 40px;
-      margin-bottom: 80px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-      border: 1px solid rgba(255,255,255,0.3);
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 2px; /* 둥글지 않게 하거나 아주 살짝만 */
+      margin-bottom: 100px;
+      padding: 60px;
+      transition: border-color 0.3s;
     }
-    .portfolio-project h2 { 
-      font-size: 1.8rem; 
-      margin-bottom: 30px; 
-      display: flex; 
-      align-items: center; 
-      gap: 10px;
+    .portfolio-project:hover { border-color: var(--text-dark); }
+    
+    .project-header { margin-bottom: 40px; }
+    .project-header h2 { 
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem; 
+      margin-bottom: 10px; 
     }
-    .portfolio-project h2::before {
-      content: ''; display: inline-block; width: 12px; height: 12px; 
-      background: var(--primary-color); border-radius: 50%;
-    }
+    .project-header p { color: var(--text-light); }
 
-    /* Skill Circles */
-    .skills-container { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
-    .skill-card { text-align: center; width: 120px; }
-    .circle-box { position: relative; width: 100px; height: 100px; margin: 0 auto 10px; }
-    .circle-svg { transform: rotate(-90deg); }
-    .circle-svg circle { fill: none; stroke-width: 8; stroke-linecap: round; }
-    .circle-svg .bg { stroke: #eee; }
+    /* Skills: nykim.net 느낌의 인디케이터 */
+    .skills-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+      gap: 30px; 
+      margin: 40px 0;
+    }
+    .skill-item { text-align: center; }
+    .circle-box { 
+      position: relative; width: 100px; height: 100px; margin: 0 auto 15px; 
+    }
+    .circle-svg { transform: rotate(-90deg); width: 100%; height: 100%; }
+    .circle-svg circle { fill: none; stroke-width: 4; }
+    .circle-svg .bg { stroke: #f3f4f6; }
     .circle-svg .progress { 
-      stroke: var(--primary-color); 
-      transition: stroke-dashoffset 1.5s ease-in-out; 
+      stroke: var(--text-dark); 
+      stroke-dasharray: 283; 
+      stroke-dashoffset: 283; 
+      transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .number { 
-      position: absolute; top: 50%; left: 50%; 
-      transform: translate(-50%, -50%); font-weight: bold; font-size: 1.1rem; 
-    }
-
-    /* Interaction Elements */
-    .btn-action {
-      background: #1a1a1a; color: #fff; border: none; padding: 12px 24px;
-      border-radius: 12px; font-weight: 600; transition: 0.3s;
-    }
-    .btn-action:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-
-    .toggle-code { 
-      background: none; border: 1px solid #ddd; color: #777; 
-      padding: 8px 16px; border-radius: 8px; margin-top: 20px; font-size: 0.9rem;
+    .skill-num { 
+      position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);
+      font-family: 'Montserrat'; font-weight: 700;
     }
 
-    /* Code Section */
-    .code-section { display: none; margin-top: 20px; }
-    .code-tabs { display: flex; gap: 5px; margin-bottom: 10px; }
-    .code-tabs button { 
-      padding: 6px 12px; border: none; background: #eee; border-radius: 4px; font-size: 0.8rem; 
+    /* UI Elements: 깔끔한 버튼 */
+    .btn-preview {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--text-dark);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 0;
+      transition: 0.3s;
+      cursor: pointer;
+      border: none;
     }
-    .code-tabs button.active { background: var(--primary-color); color: white; }
-    .code-view { display: none; }
-    .code-view.active { display: block; }
+    .btn-preview:hover { opacity: 0.8; }
 
-    /* Modal */
-    #modal { 
-      display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-      background:rgba(0,0,0,0.8); z-index:1000; align-items:center; justify-content:center;
+    .toggle-code {
+      display: block; width: 100%; margin-top: 40px; padding: 15px;
+      background: none; border: 1px dashed var(--border-color);
+      color: var(--text-light); cursor: pointer;
     }
-    .modal-window { background:white; padding:50px; border-radius:30px; max-width:400px; width:90%; }
 
-    /* Tabs UI */
-    .tabs { display:flex; gap:10px; background:#f1f1f1; padding:5px; border-radius:12px; margin-bottom:20px; }
-    .tabs button { flex:1; border:none; padding:10px; border-radius:8px; background:none; transition:0.3s; font-weight: 600;}
-    .tabs button.active { background:white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); color:var(--primary-color); }
-    .tab-content { display:none; animation: fadeIn 0.5s; padding: 10px; }
-    .tab-content.active { display:block; }
+    /* Tabs: nykim.net 특유의 탭 스타일 */
+    .tabs-nav { display: flex; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+    .tabs-nav button {
+      padding: 15px 30px; border: none; background: none; cursor: pointer;
+      font-weight: 700; color: var(--text-light); position: relative;
+    }
+    .tabs-nav button.active { color: var(--text-dark); }
+    .tabs-nav button.active::after {
+      content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px; background: var(--text-dark);
+    }
+    .tab-pane { display: none; padding: 20px 0; animation: slideUp 0.5s ease forwards; }
+    .tab-pane.active { display: block; }
 
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Code View */
+    .code-section { display: none; padding: 20px; background: #1e1e1e; margin-top: 10px; }
   </style>
 </head>
 <body>
 
-  <header id="main-header">
-    <h1>Yeonjoo Jo</h1>
-    <p>Creative Web Publisher & UI Specialist</p>
+  <header>
+    <h1 id="header-title">Yeonjoo Jo</h1>
+    <p>WEB PUBLISHER & INTERACTION DEVELOPER</p>
   </header>
 
   <main>
     <section class="portfolio-project">
-      <h2>Visualized Skills</h2>
-      <div class="skills-container">
-        <div class="skill-card">
+      <div class="project-header">
+        <h2>01. Core Capabilities</h2>
+        <p>시각적 완성도와 퍼포먼스를 모두 고려한 마크업 능력을 보유하고 있습니다.</p>
+      </div>
+      
+      <div class="skills-grid">
+        <div class="skill-item">
           <div class="circle-box">
             <svg class="circle-svg" viewBox="0 0 100 100">
-              <circle class="bg" cx="50" cy="50" r="42"></circle>
-              <circle class="progress" cx="50" cy="50" r="42" data-target="90"></circle>
+              <circle class="bg" cx="50" cy="50" r="45"></circle>
+              <circle class="progress" cx="50" cy="50" r="45" data-target="95"></circle>
             </svg>
-            <div class="number">90%</div>
-          </div>
-          <p>Photoshop</p>
-        </div>
-        <div class="skill-card">
-          <div class="circle-box">
-            <svg class="circle-svg" viewBox="0 0 100 100">
-              <circle class="bg" cx="50" cy="50" r="42"></circle>
-              <circle class="progress" cx="50" cy="50" r="42" data-target="95"></circle>
-            </svg>
-            <div class="number">95%</div>
+            <span class="skill-num">95%</span>
           </div>
           <p>HTML/CSS</p>
         </div>
-        <div class="skill-card">
+        <div class="skill-item">
           <div class="circle-box">
             <svg class="circle-svg" viewBox="0 0 100 100">
-              <circle class="bg" cx="50" cy="50" r="42"></circle>
-              <circle class="progress" cx="50" cy="50" r="42" data-target="85"></circle>
+              <circle class="bg" cx="50" cy="50" r="45"></circle>
+              <circle class="progress" cx="50" cy="50" r="45" data-target="80"></circle>
             </svg>
-            <div class="number">85%</div>
+            <span class="skill-num">80%</span>
           </div>
           <p>Angular</p>
         </div>
-      </div>
-      <button class="toggle-code">View Code Source</button>
-      <div class="code-section">
-          <div class="code-tabs">
-            <button class="active">JavaScript</button>
-            <button>Angular</button>
+        <div class="skill-item">
+          <div class="circle-box">
+            <svg class="circle-svg" viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="45"></circle>
+              <circle class="progress" cx="50" cy="50" r="45" data-target="90"></circle>
+            </svg>
+            <span class="skill-num">90%</span>
           </div>
-          <div class="code-view active">
-            <pre><code class="language-js">// GSAP Progress Circle Logic
-gsap.to(circle, { strokeDashoffset: offset, duration: 2 });</code></pre>
-          </div>
-          <div class="code-view">
-              <pre><code class="language-ts">// Angular Component Logic...</code></pre>
-          </div>
-      </div>
-    </section>
-
-    <section class="portfolio-project">
-      <h2>Bounce Interaction Modal</h2>
-      <div style="text-align: center;">
-        <button id="openModal" class="btn-action">Click to Preview Modal</button>
-      </div>
-      
-      <div id="modal">
-        <div class="modal-window">
-          <h3>Hello!</h3>
-          <p style="color:#666; margin: 15px 0;">This is a GSAP-powered bounce modal.</p>
-          <button id="closeModal" class="btn-action" style="width:100%; background:#f1f1f1; color:#333;">Close</button>
+          <p>Interaction</p>
         </div>
       </div>
-      <button class="toggle-code">View Code Source</button>
+      
+      <button class="toggle-code">SOURCE CODE</button>
+      <div class="code-section">
+        <pre><code class="language-js">/* Interaction Logic */</code></pre>
+      </div>
     </section>
 
     <section class="portfolio-project">
-      <h2>Smooth Tab Switching</h2>
-      <div class="tabs">
-        <button class="active">Experience</button>
-        <button>Skills</button>
-        <button>Vision</button>
+      <div class="project-header">
+        <h2>02. Tab Interface</h2>
+        <p>부드러운 전환과 직관적인 UX를 제공하는 탭 UI입니다.</p>
       </div>
-      <div class="tab-content active">
-          <strong>Lead Publisher @ Creative Studio</strong><br>
-          Responsive Web, UI Interaction
+
+      <div class="tabs-container">
+        <div class="tabs-nav">
+          <button class="active">PROCESS</button>
+          <button>TECH STACK</button>
+          <button>GOAL</button>
+        </div>
+        <div class="tab-pane active">기획부터 배포까지의 상세 프로세스...</div>
+        <div class="tab-pane">Angular, GSAP, SCSS, TypeScript...</div>
+        <div class="tab-pane">지속 가능한 코드를 작성하는 것이 목표입니다.</div>
       </div>
-      <div class="tab-content">GSAP, SCSS, Angular</div>
-      <div class="tab-content">프론트엔드 이해도를 갖춘 디자이너 겸 퍼블리셔</div>
-      <button class="toggle-code">View Code Source</button>
+
+      <button class="toggle-code">SOURCE CODE</button>
     </section>
   </main>
 
@@ -222,79 +213,57 @@ gsap.to(circle, { strokeDashoffset: offset, duration: 2 });</code></pre>
     gsap.registerPlugin(ScrollTrigger);
     hljs.highlightAll();
 
-    // 1. Header Animation
-    gsap.from("#main-header h1", { opacity: 0, y: 30, duration: 1.2, ease: "power4.out" });
-    gsap.from("#main-header p", { opacity: 0, y: 20, duration: 1, delay: 0.3 });
+    // 1. 헤더 타이포그래피 애니메이션
+    gsap.from("#header-title", {
+      y: 100, opacity: 0, duration: 1, ease: "power4.out"
+    });
 
-    // 2. Scroll Animation (Nykim Style)
-    gsap.utils.toArray('.portfolio-project').forEach((card, i) => {
+    // 2. 프로젝트 카드 스크롤 애니메이션
+    gsap.utils.toArray('.portfolio-project').forEach(card => {
       gsap.from(card, {
         scrollTrigger: {
           trigger: card,
-          start: "top 90%",
+          start: "top 85%",
         },
-        opacity: 0,
-        y: 50,
-        rotationX: -5,
-        duration: 1,
-        ease: "power2.out"
+        y: 50, opacity: 0, duration: 1, ease: "power2.out"
       });
     });
 
-    // 3. Circle Progress Animation
-    const animateCircles = () => {
-      document.querySelectorAll('.progress').forEach(circle => {
-        const target = circle.getAttribute('data-target');
-        const radius = circle.r.baseVal.value;
-        const circumference = 2 * Math.PI * radius;
-        
-        circle.style.strokeDasharray = circumference;
-        circle.style.strokeDashoffset = circumference;
+    // 3. 스킬 원형 인디케이터 (스크롤 시 작동)
+    gsap.utils.toArray('.progress').forEach(circle => {
+      const target = circle.getAttribute('data-target');
+      const circumference = 2 * Math.PI * 45;
 
-        ScrollTrigger.create({
+      gsap.to(circle, {
+        scrollTrigger: {
           trigger: circle,
-          start: "top 85%",
-          onEnter: () => {
-            const offset = circumference - (target / 100 * circumference);
-            gsap.to(circle, { strokeDashoffset: offset, duration: 1.5, ease: "power2.inOut" });
-          }
-        });
+          start: "top 90%",
+        },
+        strokeDashoffset: circumference - (target / 100 * circumference),
+        duration: 2,
+        ease: "power2.inOut"
       });
-    };
-    animateCircles();
+    });
 
-    // 4. Modal Logic
-    const modal = document.querySelector('#modal');
-    const modalWin = document.querySelector('.modal-window');
-    document.querySelector('#openModal').onclick = () => {
-      modal.style.display = 'flex';
-      gsap.fromTo(modal, {backgroundColor: "rgba(0,0,0,0)"}, {backgroundColor: "rgba(0,0,0,0.8)", duration: 0.4});
-      gsap.fromTo(modalWin, {scale: 0.8, opacity: 0}, {scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)"});
-    };
-    document.querySelector('#closeModal').onclick = () => {
-      gsap.to(modal, {opacity: 0, duration: 0.3, onComplete: () => {
-        modal.style.display = 'none'; gsap.set(modal, {opacity: 1});
-      }});
-    };
+    // 4. 탭 로직
+    const tabBtns = document.querySelectorAll('.tabs-nav button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
 
-    // 5. Tabs Logic
-    document.querySelectorAll('.tabs button').forEach((btn, idx) => {
+    tabBtns.forEach((btn, idx) => {
       btn.onclick = () => {
-        const container = btn.closest('.portfolio-project');
-        container.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
-        container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanes.forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
-        container.querySelectorAll('.tab-content')[idx].classList.add('active');
+        tabPanes[idx].classList.add('active');
       };
     });
 
-    // 6. Code Toggle
+    // 5. 코드 토글
     document.querySelectorAll('.toggle-code').forEach(btn => {
       btn.onclick = () => {
-        const section = btn.nextElementSibling;
-        const isHidden = window.getComputedStyle(section).display === 'none';
-        section.style.display = isHidden ? 'block' : 'none';
-        if(isHidden) gsap.from(section, {opacity: 0, y: -10, duration: 0.3});
+        const target = btn.nextElementSibling;
+        const isVisible = target.style.display === 'block';
+        target.style.display = isVisible ? 'none' : 'block';
       };
     });
   </script>
