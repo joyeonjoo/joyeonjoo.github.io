@@ -5,7 +5,6 @@
       font-family: 'Noto Sans KR', sans-serif; 
       background: #fcfcfc; 
       color: #111827; 
-     position:relative;
       line-height: 1.6;
     
     }
@@ -59,6 +58,7 @@
       margin-bottom: 100px;
       padding: 1.2rem;
       transition: border-color 0.3s;
+        position:relative;
     }
     .portfolio-project:hover { border-color: #111827; }
     
