@@ -5,8 +5,9 @@
       font-family: 'Noto Sans KR', sans-serif; 
       background: #fcfcfc; 
       color: #111827; 
-      overflow-x: hidden;
+     position:relative;
       line-height: 1.6;
+    
     }
 
     /* Header */
