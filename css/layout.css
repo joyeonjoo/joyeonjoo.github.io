@@ -22,6 +22,7 @@
         position: sticky;
         top: 0;
         flex-wrap:wrap;
+        z-index:10;
     }
 
     .logo {
@@ -57,10 +58,10 @@
       background: #fff;
       border: 1px solid #111827;
       border-radius: 2px; 
+      margin-top:24px;
       margin-bottom: 100px;
       padding: 1.2rem;
       transition: border-color 0.3s;
-        position:relative;
     }
     .portfolio-project:hover { border-color: #111827; }
     
