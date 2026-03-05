@@ -32,7 +32,7 @@
       border: 1px solid #111827;
       border-radius: 2px; 
       margin-bottom: 100px;
-      padding: 3rem;
+      padding: 1.2rem;
       transition: border-color 0.3s;
     }
     .portfolio-project:hover { border-color: #111827; }
@@ -95,7 +95,7 @@
     /* Tabs: nykim.net 특유의 탭 스타일 */
     .tabs-nav { display: flex; border-bottom: 1px solid #111827; margin-bottom: 30px; }
     .tabs-nav button {
-      padding: 15px 30px; border: none; background: none; cursor: pointer;
+      padding: 12px; border: none; background: none; cursor: pointer;
       font-weight: 700; color: #6b7280; position: relative;
     }
     .tabs-nav button.active { color: #111827; }
@@ -113,5 +113,10 @@
 @media screen and (min-width:1024px) {
     .portfolio-project {
       padding: 60px;
+    }
+    .tabs-nav { display: flex; border-bottom: 1px solid #111827; margin-bottom: 30px; }
+    .tabs-nav button {
+      padding: 15px 30px; border: none; background: none; cursor: pointer;
+      font-weight: 700; color: #6b7280; position: relative;
     }
 }
