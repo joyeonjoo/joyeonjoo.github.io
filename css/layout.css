@@ -37,7 +37,7 @@
     }
     .portfolio-project:hover { border-color: #111827; }
     
-    .project-header { margin-bottom: 40px; }
+    .project-header { margin-bottom: 1.2em; }
     .project-header h2 { 
       font-family: 'Montserrat', sans-serif;
       font-size: 2rem; 
@@ -114,6 +114,7 @@
     .portfolio-project {
       padding: 60px;
     }
+    .project-header { margin-bottom: 2em; }
     .tabs-nav { display: flex; border-bottom: 1px solid #111827; margin-bottom: 30px; }
     .tabs-nav button {
       padding: 15px 30px; border: none; background: none; cursor: pointer;
