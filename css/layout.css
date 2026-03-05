@@ -32,7 +32,7 @@
       border: 1px solid #111827;
       border-radius: 2px; 
       margin-bottom: 100px;
-      padding: 60px;
+      padding: 3rem;
       transition: border-color 0.3s;
     }
     .portfolio-project:hover { border-color: #111827; }
@@ -109,3 +109,9 @@
 
     /* Code View */
     .code-section { display: none; padding: 20px; background: #1e1e1e; margin-top: 10px; }
+
+@media screen and (min-width:1024px) {
+    .portfolio-project {
+      padding: 60px;
+    }
+}
