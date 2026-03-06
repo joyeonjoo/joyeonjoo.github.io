@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yeonjoo Jo | Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  
+  
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Doo's</div>
+      <nav>
+          <a href="#">About</a>
+          <a href="#">Work</a>
+          <a href="#">Contact</a>
+      </nav>
+      <div class="header-bottom">WEB PUBLISHER & INTERACTION DEVELOPER</p>
+    </header>
+  
+    <main>
+      <section class="project-section">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card large" data-title="프로젝트 A" data-desc="이 프로젝트는... ">
+          <div class="card-img" style="background-image: url('이미지경로1.jpg');"></div>
+          <div class="card-info"><h3>Project A</h3></div>
+        </div>
+    
+        <div class="project-card wide" data-title="프로젝트 B" data-desc="가로형 레이아웃 설명...">
+          <div class="card-img" style="background-image: url('이미지경로2.jpg');"></div>
+          <div class="card-info"><h3>Project B</h3></div>
+        </div>
+    
+        <div class="project-card" data-title="프로젝트 C" data-desc="상세 내용...">
+          <div class="card-img" style="background-image: url('이미지경로3.jpg');"></div>
+          <div class="card-info"><h3>Project C</h3></div>
+        </div>
+    
+        <div class="project-card" data-title="프로젝트 D" data-desc="상세 내용...">
+          <div class="card-img" style="background-image: url('이미지경로4.jpg');"></div>
+          <div class="card-info"><h3>Project D</h3></div>
+        </div>
+      </div>
+    </section>
+    
+    <div id="modalOverlay" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-btn">&times;</button>
+        <h2 id="modalTitle">Project Title</h2>
+        <div class="modal-body">
+          <p id="modalDesc">상세 내용이 여기에 들어갑니다.</p>
+          </div>
+      </div>
+    </div>
+      <section class="portfolio-project">
+        <div class="project-header">
+          <h2>01. Core Capabilities</h2>
+          <p>시각적 완성도와 퍼포먼스를 모두 고려한 마크업 능력을 보유하고 있습니다.</p>
+        </div>
+        
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="circle-box">
+              <svg class="circle-svg" viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"></circle>
+                <circle class="progress" cx="50" cy="50" r="45" data-target="95"></circle>
+              </svg>
+              <span class="skill-num">95%</span>
+            </div>
+            <p>HTML/CSS</p>
+          </div>
+          <div class="skill-item">
+            <div class="circle-box">
+              <svg class="circle-svg" viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"></circle>
+                <circle class="progress" cx="50" cy="50" r="45" data-target="80"></circle>
+              </svg>
+              <span class="skill-num">80%</span>
+            </div>
+            <p>Angular</p>
+          </div>
+          <div class="skill-item">
+            <div class="circle-box">
+              <svg class="circle-svg" viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"></circle>
+                <circle class="progress" cx="50" cy="50" r="45" data-target="90"></circle>
+              </svg>
+              <span class="skill-num">90%</span>
+            </div>
+            <p>Interaction</p>
+          </div>
+        </div>   
+      </section>
+  
+      <section class="portfolio-project">
+        <div class="project-header">
+          <h2>02. Tab Interface</h2>
+          <p>부드러운 전환과 직관적인 UX를 제공하는 탭 UI입니다.</p>
+        </div>
+  
+        <div class="tabs-container">
+          <div class="tabs-nav">
+            <button class="active">UI/UX Design</button>
+            <button>PUBLISHER</button>
+            <button>DEVELOPER</button>
+          </div>
+          <div class="tab-pane active">공통 컴포넌트 설계와 반응형 퍼블리싱 바탕으로 전반의 UI/UX를 개선 및 디자인</div>
+          <div class="tab-pane">프론트엔드 UI/UX 구현,상태 관리 및 공통 컴포넌트 설계, 스토어 유지보수</div>
+          <div class="tab-pane">Angular, GSAP, SCSS, TypeScript</div>
+        </div>
+      </section>
+
+      <section class="portfolio-project">
+        <div class="project-header">
+          <h2>03. Modal</h2>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    hljs.highlightAll();
+
+    // 1. 헤더 타이포그래피 애니메이션
+    gsap.from("#header-title", {
+      y: 100, opacity: 0, duration: 1, ease: "power4.out"
+    });
+
+    // 2. 프로젝트 카드 스크롤 애니메이션
+    gsap.utils.toArray('.portfolio-project').forEach(card => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+        },
+        y: 50, opacity: 0, duration: 1, ease: "power2.out"
+      });
+    });
+
+    // 3. 스킬 원형 인디케이터 (스크롤 시 작동)
+    gsap.utils.toArray('.progress').forEach(circle => {
+      const target = circle.getAttribute('data-target');
+      const circumference = 2 * Math.PI * 45;
+
+      gsap.to(circle, {
+        scrollTrigger: {
+          trigger: circle,
+          start: "top 90%",
+        },
+        strokeDashoffset: circumference - (target / 100 * circumference),
+        duration: 2,
+        ease: "power2.inOut"
+      });
+    });
+
+    // 4. 탭 로직
+    const tabBtns = document.querySelectorAll('.tabs-nav button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabBtns.forEach((btn, idx) => {
+      btn.onclick = () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanes.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        tabPanes[idx].classList.add('active');
+      };
+    });
+
+    // 5. 코드 토글
+    document.querySelectorAll('.toggle-code').forEach(btn => {
+      btn.onclick = () => {
+        const target = btn.nextElementSibling;
+        const isVisible = target.style.display === 'block';
+        target.style.display = isVisible ? 'none' : 'block';
+      };
+    });
+  </script>
+</body>
+</html>
