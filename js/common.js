@@ -4,15 +4,13 @@ const modalTitle = document.getElementById('modal-title');
 const modalDesc = document.getElementById('modal-desc');
 
 document.querySelector('.project-grid').addEventListener('click', (e) => {
-  if (e.target.classList.contains('open-btn')) {
+  .project-card {
     const card = e.target.closest('.project-card');
-
-    // 1. data 속성에서 값 가져오기
+    if (!card) return;
     modalImg.src = card.dataset.img;
     modalTitle.textContent = card.dataset.title;
     modalDesc.textContent = card.dataset.desc;
 
-    // 2. 모달 열기
     modal.showModal();
   }
 });
