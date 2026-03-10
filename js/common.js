@@ -4,7 +4,7 @@ const modalTitle = document.getElementById('modal-title');
 const modalDesc = document.getElementById('modal-desc');
 
 document.querySelector('.project-grid').addEventListener('click', (e) => {
-  .project-card 
+  
     const card = e.target.closest('.project-card');
     if (!card) return;
     modalImg.src = card.dataset.img;
