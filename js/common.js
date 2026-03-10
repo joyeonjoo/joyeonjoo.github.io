@@ -2,9 +2,9 @@ const cards = document.querySelectorAll('.project-card');
 const modal = document.getElementById('modalOverlay');
 const closeBtn = document.querySelector('.close-btn');
 
+
 cards.forEach(card => {
   card.addEventListener('click', () => {
-    // 클릭한 카드의 데이터를 모달에 넣어주기
     document.getElementById('modalTitle').innerText = card.dataset.title;
     document.getElementById('modalDesc').innerText = card.dataset.desc;
     
