@@ -25,46 +25,43 @@
   
     <main>
       <section class="portfolio-project project-section">
-      <h2>My Projects</h2>
-      <div class="project-grid">
-        <div class="project-card large" data-title="web, app" data-desc="">
-          <div class="card-img" style="background-image: url('img/contents.png');"></div>
-          <div class="card-info">
-            <img sre="img/design0.png">
-          </div>
-        </div>
-
-        <dialog id="main-modal">
-          <div class="project-card wide" data-title="POD플랫폼 반응형 퍼블리싱" data-desc="Angular 기반 UI/UX 개선 및 반응형 퍼블리싱">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+          <article class="project-card large" data-title="UI/UX 디자인 퍼블리싱" data-desc="UI/UX 디자인 퍼블리싱">
+            <div class="card-img" style="background-image: url('img/contents.png');"></div>
+            <div class="card-info">
+              <img src="img/design0.png">
+            </div>
+          </article>
+          <article class="project-card wide" data-title="POD플랫폼 반응형 퍼블리싱" data-desc="Angular 기반 UI/UX 개선 및 반응형 퍼블리싱" data-img="img/design3.png">
             <div class="card-img" style="background-image: url('img/design0.png');"></div>
             <div class="card-info">
-              <img sre="img/design0.png">
+              <img src="img/design0.png">
             </div>
-          </div>
-          <button class="close-btn">닫기</button>
-        </dialog>
+          </article>  
+          <article class="project-card" data-title="브랜드 굿즈몰" data-desc="코웨이 브랜드 굿즈몰 UI/UX 디자인 및 웹 퍼블리싱 운영" data-img="img/design1.png">
+            <div class="card-img" style="background-image: url('img/design1.png');"></div>
+            <div class="card-info">
+              <img src="img/design1.png">
+            </div>
+          </article>  
+          <article class="project-card" data-title="솔루션 관리자 프로그램 디자인 및 퍼블리싱" data-desc="임대관리 솔루션 관리자 시스템 가이드 제작 및 상담 프로세스 UI 개선" data-img="img/design3.png">
+            <div class="card-img" style="background-image: url('img/design3.png');"></div>
+            <div class="card-info">
+              <img src="img/design3.png">
+            </div>
+          </article>        
+        </div>        
+      </section>
     
-        <div class="project-card" data-title="브랜드 굿즈몰" data-desc="코웨이 브랜드 굿즈몰 UI/UX 디자인 및 웹 퍼블리싱 운영">
-          <div class="card-img" style="background-image: url('img/design1.png');"></div>
-          <div class="card-info"><h3>브랜드 굿즈몰</h3></div>
+      <dialog id="main-modal">
+        <div class="modal-content">
+          <h2 id="modal-title"></h2>
+          <p id="modal-desc"></p>
+          <img id="modal-img" src="" alt="">
+          <button id="close-btn">닫기</button>
         </div>
-    
-        <div class="project-card" data-title="솔루션 관리자 프로그램 디자인 및 퍼블리싱" data-desc="임대관리 솔루션 관리자 시스템 가이드 제작 및 상담 프로세스 UI 개선">
-          <div class="card-img" style="background-image: url('img/design3.png');"></div>
-          <div class="card-info"><h3>솔루션 관리자 프로그램 디자인 및 퍼블리싱</h3></div>
-        </div>
-      </div>
-    </section>
-    
-    <div id="modalOverlay" class="modal-overlay">
-      <div class="modal-content">
-        <button class="close-btn">&times;</button>
-        <h2 id="modalTitle">Project Title</h2>
-        <div class="modal-body">
-          <p id="modalDesc">modal-test</p>
-          </div>
-      </div>
-    </div>
+      </dialog>
       <section class="portfolio-project">
         <div class="project-header">
           <h2>01. Core Capabilities</h2>
