@@ -1,16 +1,20 @@
-const cards = document.querySelectorAll('.project-card');
-const modal = document.getElementById('modalOverlay');
-const closeBtn = document.querySelector('.close-btn');
+const modal = document.getElementById('main-modal');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
 
+document.querySelector('.project-grid').addEventListener('click', (e) => {
+  if (e.target.classList.contains('open-btn')) {
+    const card = e.target.closest('.project-card');
 
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    document.getElementById('modalTitle').innerText = card.dataset.title;
-    document.getElementById('modalDesc').innerText = card.dataset.desc;
-    
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
-  });
+    // 1. data 속성에서 값 가져오기
+    modalImg.src = card.dataset.img;
+    modalTitle.textContent = card.dataset.title;
+    modalDesc.textContent = card.dataset.desc;
+
+    // 2. 모달 열기
+    modal.showModal();
+  }
 });
 
 closeBtn.addEventListener('click', () => {
