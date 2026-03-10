@@ -15,10 +15,6 @@ document.querySelector('.project-grid').addEventListener('click', (e) => {
   }
 });
 
-closeBtn.addEventListener('click', () => {
-  modal.classList.remove('active');
-  document.body.style.overflow = ''; 
-});
 
 // 배경 클릭하면 닫기
 window.addEventListener('click', (e) => {
