@@ -69,7 +69,13 @@
 
     /* Main Container */
     main { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
+    .selfie-text{
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(3rem, 10vw, 6rem); 
+      line-height: 1;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
     .project-section{
        padding:24px;
     }
@@ -126,7 +132,7 @@
       font-family: 'Montserrat'; font-weight: 700;
     }
 
-    /* UI Elements: 깔끔한 버튼 */
+  
     .btn-preview {
       display: inline-block;
       padding: 12px 30px;
@@ -303,6 +309,11 @@
 .modal-overlay.active .modal-content { transform: translateY(0); }
 
 .close-btn {
-  position: absolute; top: 20px; right: 30px;
-  font-size: 40px; border: none; background: none; cursor: pointer;
+    position: absolute; 
+    top: 20px; 
+    right: 30px;
+    font-size: 40px; 
+    border: rgba(255, 255, 255, 0.3); 
+    background: none; 
+    cursor: pointer;
 }
