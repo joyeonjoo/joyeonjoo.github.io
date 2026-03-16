@@ -71,7 +71,7 @@
     main { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .selfie-text{
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(3rem, 10vw, 6rem); 
+      font-size: clamp(1.8rem, 10vw, 3rem); 
       line-height: 1;
       margin-bottom: 20px;
       text-transform: uppercase;
