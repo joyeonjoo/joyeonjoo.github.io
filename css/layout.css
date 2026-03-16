@@ -201,7 +201,6 @@
 }
 
 .project-card:hover { transform: scale(1.03); }
-
 .card-img {
   width: 100%; height: 100%;
   background-size: cover; background-position: center;
@@ -248,10 +247,10 @@
     justify-content: space-between;
     align-items: center;
 }
-.m3-dialog-content {height:30vh; max-height:50vh;padding: 24px; overflow-y:auto; }
-.m3-dialog-body { overflow-y:auto}
+.m3-dialog-content {padding: 24px;}
+.m3-dialog-body {}
 .m3-title { font-size: 24px; font-weight: 400; margin: 0 0 16px 0; }
-.m3-img-container { width: 100%; border-radius: 16px; overflow: hidden auto; margin-bottom: 16px; }
+.m3-img-container {height:30vh; max-height:50vh; width: 100%; border-radius: 16px; overflow: hidden auto; margin-bottom: 16px; }
 .m3-img-container img { width: 100%; display: block; }
 .m3-desc { font-size: 14px; line-height: 20px; color: #49454f; }
 
@@ -323,4 +322,5 @@
     border: rgba(255, 255, 255, 0.3); 
     background: none; 
     cursor: pointer;
+  padding:6px;
 }
