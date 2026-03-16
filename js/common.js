@@ -1,28 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-      // 1. GSAP 플러그인 등록
-      gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
+
+  const modal = document.getElementById('main-modal');
+  const closeBtn = document.getElementById('close-btn');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDesc = document.getElementById('modal-desc');
+  const modalImg = document.getElementById('modal-img');
+  const projectGrid = document.querySelector('.project-grid');
   
-      // 2. 모달 로직 (기존 코드)
-      const modal = document.getElementById('main-modal');
-      const closeBtn = document.getElementById('close-btn');
-      const modalTitle = document.getElementById('modal-title');
-      const modalDesc = document.getElementById('modal-desc');
-      const modalImg = document.getElementById('modal-img');
-      const projectGrid = document.querySelector('.project-grid');
-  
-      if (projectGrid) {
-          projectGrid.addEventListener('click', (e) => {
-              const card = e.target.closest('.project-card');
-              if (card) {
-                  modalTitle.textContent = card.dataset.title;
-                  modalDesc.textContent = card.dataset.desc;
-                  modalImg.src = card.dataset.img || card.querySelector('img')?.src || '';
-                  modal.showModal();
-              }
-          });
+     let lastFocusedElement; // 접근성을 위한 포커스 복원 변수
+
+  if (projectGrid) {
+    projectGrid.addEventListener('click', (e) => {
+      const card = e.target.closest('.project-card');
+      if (card) {
+        lastFocusedElement = card; // 클릭한 카드 기억
+        
+        // 데이터 주입
+        modalTitle.textContent = card.dataset.title || 'Project Details';
+        modalDesc.textContent = card.dataset.desc || '';
+        
+        // 이미지 처리 (data-img 우선 -> 카드 내 img -> 없으면 숨김)
+        const imgSrc = card.dataset.img || card.querySelector('img')?.src;
+        if (imgSrc) {
+          modalImg.src = imgSrc;
+          modalImg.parentElement.style.display = 'block';
+        } else {
+          modalImg.parentElement.style.display = 'none';
+        }
+
+        modal.showModal();
       }
-  
-      closeBtn?.addEventListener('click', () => modal.close());
+    });
+  }
+
+  // 모달 닫기 로직
+  const closeModal = () => {
+    modal.close();
+    lastFocusedElement?.focus(); // 원래 카드로 포커스 돌려주기
+  };
+
+  closeBtn?.addEventListener('click', closeModal);
+
+  // 배경 클릭 시 닫기
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
   
       // 3. 프로젝트 카드 스크롤 애니메이션
       // 선택자 확인: '.portfolio-project'가 HTML에 실제 존재하는 클래스인지 확인하세요!
