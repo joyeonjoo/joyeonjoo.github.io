@@ -131,11 +131,6 @@
   gsap.registerPlugin(ScrollTrigger);
     hljs.highlightAll();
 
-    // 1. 헤더 타이포그래피 애니메이션
-    gsap.from("#header-title", {
-      y: 100, opacity: 0, duration: 1, ease: "power4.out"
-    });
-
     // 2. 프로젝트 카드 스크롤 애니메이션
     gsap.utils.toArray('.portfolio-project').forEach(card => {
       gsap.from(card, {
