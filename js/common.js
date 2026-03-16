@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeBtn.addEventListener('click', () => {
     modal.close();
+    lastFocusedElement?.focus(); 
   });
 
   modal.addEventListener('click', (e) => {
@@ -31,40 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-gsap.registerPlugin(ScrollTrigger);
-    hljs.highlightAll();
 
-    // 1. 헤더 타이포그래피 애니메이션
-    gsap.from("#header-title", {
-      y: 100, opacity: 0, duration: 1, ease: "power4.out"
-    });
-
-    // 2. 프로젝트 카드 스크롤 애니메이션
-    gsap.utils.toArray('.portfolio-project').forEach(card => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top 100%",
-        },
-        y: 50, opacity: 0, duration: 1, ease: "power2.out"
-      });
-    });
-
-    // 3. 스킬 원형 인디케이터 (스크롤 시 작동)
-    gsap.utils.toArray('.progress').forEach(circle => {
-      const target = circle.getAttribute('data-target');
-      const circumference = 2 * Math.PI * 45;
-
-      gsap.to(circle, {
-        scrollTrigger: {
-          trigger: circle,
-          start: "bottom 10%",
-        },
-        strokeDashoffset: circumference - (target / 100 * circumference),
-        duration: 2,
-        ease: "power2.inOut"
-      });
-    });
 
     // 4. 탭 로직
     const tabBtns = document.querySelectorAll('.tabs-nav button');
@@ -79,11 +47,3 @@ gsap.registerPlugin(ScrollTrigger);
       };
     });
 
-    // 5. 코드 토글
-    document.querySelectorAll('.toggle-code').forEach(btn => {
-      btn.onclick = () => {
-        const target = btn.nextElementSibling;
-        const isVisible = target.style.display === 'block';
-        target.style.display = isVisible ? 'none' : 'block';
-      };
-    });
