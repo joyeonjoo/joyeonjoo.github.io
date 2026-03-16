@@ -52,9 +52,14 @@ modal.addEventListener('click', (e) => {
   if (e.target === modal) closeModal();
 });
 
-    gsap.to('.selfie-text', {
-    	scrollTrigger: '.selfie-text', // start animation when ".box" enters the viewport
-    	x: 500
+    let split = SplitText.create(".selfie-text", { type: "words, chars" });
+
+    // now animate the characters in a staggered fashion
+    gsap.from(split.chars, {
+      duration: 1, 
+      y: 100,       // animate from 100px below
+      autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
+      stagger: 0.05 // 0.05 seconds between each
     });
       gsap.utils.toArray('.portfolio-project').forEach(card => {
           gsap.from(card, {
