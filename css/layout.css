@@ -70,7 +70,18 @@
     /* Main Container */
     main { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-    /* Project Section */
+    .project-section{
+       padding:24px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-auto-rows: 280px;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     .portfolio-project {
       background: #fff;
       border: 1px solid #111827;
@@ -164,14 +175,6 @@
     }
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 250px;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 /* 데스크탑에서 벤토 스타일 적용 */
 @media (min-width: 900px) {
