@@ -229,7 +229,11 @@
   overflow: hidden;
   height: 100%; 
 }
-
+.m3-dialog-header{
+    background-color: transparent;
+    box-shadow:none;
+    position:relative;
+}
 .m3-dialog-content { padding: 24px; }
 .m3-title { font-size: 24px; font-weight: 400; margin: 0 0 16px 0; }
 .m3-img-container { width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 16px; }
