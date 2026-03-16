@@ -74,9 +74,9 @@
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(1.8rem, 10vw, 3rem); 
       line-height: 1;
-      margin-bottom: 20px;
-      text-transform: uppercase;'
-      text-align:center;
+      margin: 20px auto;
+      text-transform: uppercase;
+      text-align: center;
     }
     .project-section{
        padding:24px;
