@@ -186,12 +186,12 @@
   color: white;
 }
 
-/* M3 다이얼로그 본체 */
+
 #main-modal {
   border: none;
-  border-radius: 28px; /* M3 핵심 */
+  border-radius: 28px; 
   padding: 0; 
-  background-color: #f7f2fa; /* M3 Surface Container */
+  background-color: #f7f2fa; 
   color: #1d1b20;
   max-width: 560px;
   width: 90%;
@@ -199,20 +199,20 @@
   overflow: hidden;
 }
 
-/* 배경(Backdrop) 스타일 */
+
 #main-modal::backdrop {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
 }
 
-/* 내부 레이아웃 */
+
 .m3-dialog-content { padding: 24px; }
 .m3-title { font-size: 24px; font-weight: 400; margin: 0 0 16px 0; }
 .m3-img-container { width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 16px; }
 .m3-img-container img { width: 100%; display: block; }
 .m3-desc { font-size: 14px; line-height: 20px; color: #49454f; }
 
-/* 버튼 영역 */
+
 .m3-dialog-actions {
   display: flex;
   justify-content: flex-end;
@@ -231,8 +231,12 @@
   padding: 10px 24px; font-weight: 500; cursor: pointer; border-radius: 100px;
 }
 
-/* 애니메이션 */
+
 #main-modal[open] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   animation: m3-open 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
