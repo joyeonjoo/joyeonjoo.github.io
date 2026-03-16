@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  gsap.registerPlugin(ScrollTrigger, SplitText);
+  gsap.registerPlugin(ScrollTrigger);
 
   const modal = document.getElementById('main-modal');
   const closeBtn = document.getElementById('close-btn');
@@ -52,14 +52,16 @@ modal.addEventListener('click', (e) => {
   if (e.target === modal) closeModal();
 });
 
-      let split = SplitText.create(".selfie-text", { type: "words, chars" });
-  
-      // now animate the characters in a staggered fashion
-      gsap.from(split.chars, {
-        duration: 1, 
-        y: 100,       // animate from 100px below
-        autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
-        stagger: 0.05 // 0.05 seconds between each
+      gsap.from(".selfie-text", {
+        scrollTrigger: {
+          trigger: ".container",
+          start: "top center",
+          scrub: true,           // 스크롤 속도에 맞춰 애니메이션 진행
+        },
+        opacity: 0,
+        y: 20,
+        stagger: 0.1,            // 각 글자 사이의 간격
+        duration: 0.5
       });
       gsap.utils.toArray('.portfolio-project').forEach(card => {
           gsap.from(card, {
