@@ -217,7 +217,11 @@ dialog:-internal-dialog-in-top-layer::backdrop{
     transform: translateY(30px);
     transition: 0.4s ease;
 }
-
+.modal-content .modal-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .modal-overlay.active .modal-content { transform: translateY(0); }
 
 .close-btn {
