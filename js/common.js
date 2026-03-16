@@ -51,7 +51,11 @@ modal.addEventListener('cancel', () => {
 modal.addEventListener('click', (e) => {
   if (e.target === modal) closeModal();
 });
-  
+
+    gsap.to('.selfie-text', {
+    	scrollTrigger: '.selfie-text', // start animation when ".box" enters the viewport
+    	x: 500
+    });
       gsap.utils.toArray('.portfolio-project').forEach(card => {
           gsap.from(card, {
               scrollTrigger: {
