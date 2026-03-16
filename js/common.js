@@ -30,20 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         modal.showModal();
+        document.body.classList.add('no-scroll');
       }
     });
   }
 
   const closeModal = () => {
-    modal.close();
-    lastFocusedElement?.focus(); 
-  };
+  modal.close();
+  document.body.classList.remove('no-scroll'); 
+  lastFocusedElement?.focus();
+};
 
-  closeBtn?.addEventListener('click', closeModal);
+closeBtn?.addEventListener('click', closeModal);
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
+
+modal.addEventListener('cancel', () => {
+  document.body.classList.remove('no-scroll');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal();
+});
   
       gsap.utils.toArray('.portfolio-project').forEach(card => {
           gsap.from(card, {
