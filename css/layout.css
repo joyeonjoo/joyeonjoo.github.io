@@ -244,6 +244,9 @@
     background-color: transparent;
     box-shadow:none;
     position:relative;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .m3-dialog-content { padding: 24px; overflow-y:auto; }
 .m3-dialog-body {height:70vh; overflow-y:auto}
