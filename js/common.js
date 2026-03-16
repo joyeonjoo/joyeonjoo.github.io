@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(SplitText);
 
   const modal = document.getElementById('main-modal');
   const closeBtn = document.getElementById('close-btn');
