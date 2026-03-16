@@ -54,7 +54,7 @@ modal.addEventListener('click', (e) => {
 
       gsap.from(".selfie-text", {
         scrollTrigger: {
-          trigger: ".container",
+          trigger: ".wrap",
           start: "top center",
           scrub: true,           // 스크롤 속도에 맞춰 애니메이션 진행
         },
