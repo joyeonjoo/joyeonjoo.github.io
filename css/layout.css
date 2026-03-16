@@ -261,7 +261,7 @@
 
 .m3-btn-text {
   background: none; border: none; color: #6750a4; 
-  padding: 10px 16px; font-weight: 500; cursor: pointer; border-radius: 100px;
+  padding: 6px 10px; font-weight: 500; cursor: pointer; border-radius: 100px;
 }
 .m3-btn-text:hover { background: rgba(103, 80, 164, 0.08); }
 
@@ -305,16 +305,14 @@
     overflow-y:auto;
 }
 .modal-content .modal-header{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
+    
 }
 .modal-overlay.active .modal-content { transform: translateY(0); }
 
 .close-btn {
     position: absolute; 
-    top: 20px; 
-    right: 30px;
+    top: 10px; 
+    right: 10px;
     font-size: 40px; 
     border: rgba(255, 255, 255, 0.3); 
     background: none; 
