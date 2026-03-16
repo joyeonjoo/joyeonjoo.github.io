@@ -302,6 +302,7 @@
     position: relative;
     transform: translateY(30px);
     transition: 0.4s ease;
+    overflow-y:auto;
 }
 .modal-content .modal-header{
     display:flex;
