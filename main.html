@@ -49,15 +49,22 @@
       </section>
     
       <dialog id="main-modal">
-        <div class="modal-content">
-          <div class="modal-header">            
-            <h2 id="modal-title"></h2>          
-            <button id="close-btn">닫기</button>
-          </div>
-          <p id="modal-desc"></p>
-          <div class="img-area">
-            <img id="modal-img" src="" alt="">
-          </div>          
+        <div class="m3-dialog-content">
+          <header class="m3-dialog-header">
+            <h2 id="modal-title" class="m3-title"></h2>
+          </header>
+          
+          <section class="m3-dialog-body">
+            <div class="m3-img-container">
+              <img id="modal-img" src="" alt="Project Detail">
+            </div>
+            <p id="modal-desc" class="m3-desc"></p>
+          </section>
+      
+          <footer class="m3-dialog-actions">
+            <button id="close-btn" class="m3-btn-text">닫기</button>
+            <button class="m3-btn-filled">자세히 보기</button>
+          </footer>
         </div>
       </dialog>
       <section class="portfolio-project">
