@@ -100,6 +100,9 @@
       transition: border-color 0.3s;
     }
     .portfolio-project:hover { border-color: #111827; }
+    .portfolio-project .work-header{
+        margin:12px;
+    }
     
     .project-header { margin-bottom: 1.2em; }
     .project-header h2 { 
