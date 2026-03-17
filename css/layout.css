@@ -176,7 +176,7 @@
 
 @media screen and (min-width:1024px) {
     .portfolio-project {
-      padding: 60px;
+      
     }
     .project-header { margin-bottom: 2em; }
     .tabs-nav { display: flex; border-bottom: 1px solid #111827; margin-bottom: 30px; }
