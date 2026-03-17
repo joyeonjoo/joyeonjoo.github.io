@@ -257,8 +257,9 @@
 	background: none; 
 	cursor: pointer;
 	font-weight:600;
-	border-radius:40px;
+	border-radius:18px;
 	backgourd: background: rgba(103, 80, 164, 0.08);
+	padding:6px;
 }
 .m3-btn-text:hover { background: rgba(103, 80, 164, 0.08); }
 .m3-dialog-content {padding: 24px;}
