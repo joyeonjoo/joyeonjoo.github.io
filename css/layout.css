@@ -254,12 +254,13 @@
 	right: 0px;
 	font-size: 18px; 
 	border: rgba(255, 255, 255, 0.3); 
-	background: none; 
 	cursor: pointer;
-	font-weight:600;
+	font-weight:500;
 	border-radius:18px;
-	backgourd: background: rgba(103, 80, 164, 0.08);
+	background: rgba(103, 80, 164, 0.08);
 	padding:6px;
+	width:36px;
+	height:36px;
 }
 .m3-btn-text:hover { background: rgba(103, 80, 164, 0.08); }
 .m3-dialog-content {padding: 24px;}
