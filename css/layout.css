@@ -320,7 +320,7 @@
 }
 .btn-mail {
   position: relative;
-  padding: 12px 24px;
+  padding: 6px ;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -330,24 +330,19 @@
   gap: 10px;
   outline: none;
 }
-
-/* 1. 밑라인 애니메이션 (Pseudo-element 활용) */
 .btn-mail::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0; /* 처음엔 0 */
+  width: 0;
   height: 2px;
-  background-color: #000; /* 라인 색상 */
+  background-color: #000;
   transition: width 0.3s ease;
 }
-
 .btn-mail:hover::after {
-  width: 100%; /* 마우스 오버 시 전체 너비로 */
+  width: 100%; 
 }
-
-/* 2. 원형(Circle) 및 화살표 아이콘 */
 .circle {
   position: relative;
   width: 24px;
@@ -356,9 +351,8 @@
   border-radius: 50%;
   display: inline-block;
   transition: transform 0.3s ease;
+	background-color:#111827;
 }
-
-/* CSS로 화살표 만들기 (정중앙 배치) */
 .circle::before {
   content: '';
   position: absolute;
@@ -370,8 +364,6 @@
   border-right: 2px solid #000;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-
-/* 마우스 오버 시 원형 아이콘에 효과를 주고 싶다면 추가 */
 .btn-mail:hover .circle {
-  transform: translateX(5px); /* 오른쪽으로 살짝 이동 */
+  background-color:#6750a4;
 }
