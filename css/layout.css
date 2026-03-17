@@ -260,8 +260,15 @@
 }
 
 .m3-btn-text {
-  background: none; border: none; color: #6750a4; 
-  padding: 6px 10px; font-weight: 500; cursor: pointer; border-radius: 100px;
+	position: absolute; 
+	top: 0; 
+	right: 10px;
+	font-size: 40px; 
+	border: rgba(255, 255, 255, 0.3); 
+	background: none; 
+	cursor: pointer;
+	font-weight:500;
+	border-radius:40px;
 }
 .m3-btn-text:hover { background: rgba(103, 80, 164, 0.08); }
 
