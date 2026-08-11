@@ -27,7 +27,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+.wrap{
+   position:relative;
+}
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -45,6 +47,10 @@ a {
    Header & Nav
    ========================================== */
 .header {
+  position:sticky;
+  top:0;
+  left:0;
+  background:#ffffff;
   height: 70px;
   border-bottom: 1px solid #E5E7EB;
   display: flex;
