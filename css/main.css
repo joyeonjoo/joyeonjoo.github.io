@@ -330,10 +330,7 @@ a {
    모바일 반응형 (768px 이하)
    ========================================== */
 @media (max-width: 768px) {
-  .header {
-    position: relative;
-  }
-
+ 
   .header-toggle {
     display: flex;
   }
