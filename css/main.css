@@ -301,6 +301,75 @@ a {
    Responsive (반응형 768px 이하)
    ========================================== */
 @media (max-width: 768px) {
+   /* 기본 상태에서는 햄버거 버튼 숨김 */
+.header-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.header-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+/* ==========================================
+   모바일 반응형 (768px 이하)
+   ========================================== */
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+  }
+
+  .header-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #E5E7EB;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    z-index: 100;
+  }
+
+  .nav.active {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav li a {
+    display: block;
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .header-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .header-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .header-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
   .project-grid {
     grid-template-columns: 1fr;
   }
