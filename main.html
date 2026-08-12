@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="12년차 웹 퍼블리셔 조연주의 포트폴리오">
-  <title>Yeonjoo Jo | Web Publisher</title>
+
+  <meta
+    name="description"
+    content="12년차 웹 퍼블리셔 조연주의 포트폴리오"
+  >
+
+  <title>YJ Portfolio | Jo Yeonjoo</title>
+
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+
 <div class="wrap">
 
   <!-- HEADER -->
@@ -16,14 +23,15 @@
     <div class="container header-container">
 
       <h1 class="logo">
-        <a href="#home">Jo Yeonjoo</a>
+        <a href="#home">YJ Portfolio</a>
       </h1>
 
       <button
         type="button"
         class="header-toggle"
         id="menuToggle"
-        aria-label="메뉴 열기">
+        aria-label="메뉴 열기"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -31,439 +39,535 @@
 
       <nav class="nav" id="navMenu">
         <ul>
-          <li><a href="#home" class="active">HOME</a></li>
           <li><a href="#about">ABOUT</a></li>
-          <li><a href="#career">CAREER</a></li>
+          <li><a href="#skills">SKILLS</a></li>
           <li><a href="#projects">PROJECTS</a></li>
           <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
 
+      <a href="#contact" class="header-resume">
+        Resume ↓
+      </a>
+
     </div>
   </header>
 
 
-  <!-- HOME -->
   <main>
 
+    <!-- ==========================================
+         HERO
+    =========================================== -->
+
     <section id="home" class="hero">
-      <div class="container">
 
-        <div class="hero-text">
+      <div class="container hero-inner">
 
-  <span class="hero-label">WEB PUBLISHER · 12 YEARS</span>
+        <div class="hero-copy">
 
-  <h2>
-    기획서의 빈칸을<br>
-    UI로 채우는<br>
-    <strong>조금은 오지랖 넓은 퍼블리셔입니다.</strong>
-  </h2>
+          <span class="eyebrow">
+            Web Publisher · 12 Years Experience
+          </span>
 
-  <p>
-    화면을 만드는 것에서 끝내지 않고<br>
-    사용자의 흐름과 개발자의 유지보수까지 함께 고민합니다.
-  </p>
+          <h2>
+            기획서의 빈칸을<br>
+            UI로 채우는 퍼블리셔,<br>
+            <strong>조연주입니다.</strong>
+          </h2>
 
-  <div class="hero-btns">
-    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-    <a href="#about" class="btn btn-outline">ABOUT ME</a>
-  </div>
-
-</div>
-
-        <div class="hero-info">
-
-          <div class="hero-info-item">
-            <span>CAREER</span>
-            <strong>12 YEARS</strong>
-          </div>
-
-          <div class="hero-info-item">
-            <span>MAIN</span>
-            <strong>WEB PUBLISHING</strong>
-          </div>
-
-          <div class="hero-info-item">
-            <span>FOCUS</span>
-            <strong>UI · UX · FRONTEND</strong>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ABOUT -->
-    <section id="about" class="about section">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="section-number">01</span>
-          <h2>About</h2>
-        </div>
-
-        <div class="about-content">
-
-          <div class="about-title">
-            <h3>
-              화면보다<br>
-              <strong>흐름을 먼저 봅니다.</strong>
-            </h3>
-          </div>
-
-          <div class="about-text">
-            <p>
-              작업하다 보면 "이 버튼이 여기 있으면 사용자가 헤매지 않을까?",
-              "이건 공통으로 만들면 다음 수정이 훨씬 편하지 않을까?"
-              같은 생각을 자주 합니다.
-            </p>
-
-            <p>
-              누가 시켜서라기보다 그냥 그런 것들이 먼저 보입니다.
-              기획이 비어 있으면 흐름을 정리하고,
-              반복되는 작업이 보이면 공통 컴포넌트를 고민합니다.
-            </p>
-
-            <p>
-              12년 동안 디자인과 퍼블리싱을 함께 경험하면서
-              사용자에게는 자연스럽고 개발자에게는 유지보수하기 좋은
-              UI를 만드는 것을 중요하게 생각하게 됐습니다.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- CAREER -->
-    <section id="career" class="career section">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="section-number">02</span>
-          <h2>Career</h2>
-        </div>
-
-        <div class="career-list">
-
-          <article class="career-item">
-            <div class="career-period">
-              2024.03 — NOW
-            </div>
-
-            <div class="career-info">
-              <h3>블루스톤익스체인지</h3>
-              <span>Web Publisher</span>
-
-              <p>
-                Angular 기반 쇼핑몰 및 POD 플랫폼 구축·운영
-              </p>
-
-              <div class="career-tags">
-                <span>Angular</span>
-                <span>TypeScript</span>
-                <span>SCSS</span>
-                <span>Git</span>
-                <span>Figma</span>
-              </div>
-            </div>
-          </article>
-
-
-          <article class="career-item">
-            <div class="career-period">
-              2017.06 — 2022.12
-            </div>
-
-            <div class="career-info">
-              <h3>프롭티어</h3>
-              <span>UI/UX Designer · Publisher</span>
-
-              <p>
-                서비스 UI/UX 디자인 및 웹 퍼블리싱
-              </p>
-
-              <div class="career-tags">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>Figma</span>
-                <span>Adobe XD</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects section">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="section-number">03</span>
-          <h2>Selected Projects</h2>
           <p>
-            최근 프로젝트를 중심으로 정리했습니다.
+            화면을 만드는 것에서 끝나지 않고<br>
+            사용자와 개발자가 편해지는 방법을 함께 고민합니다.
           </p>
+
+          <div class="tech-tags">
+            <span>Angular</span>
+            <span>TypeScript</span>
+            <span>SCSS</span>
+            <span>Git</span>
+            <span>Figma</span>
+            <span>Responsive</span>
+          </div>
+
+        </div>
+
+
+        <!-- 노트북 목업 -->
+        <div class="hero-mockup">
+
+          <div class="laptop">
+
+            <div class="laptop-screen">
+              <img
+                src="img/thumb_miraen.png"
+                alt="미래엔 초등교육 쇼핑몰"
+              >
+            </div>
+
+            <div class="laptop-bottom"></div>
+
+          </div>
+
+          <div class="mockup-shadow"></div>
+
+        </div>
+
+      </div>
+
+
+      <div class="scroll-down">
+        <span>Scroll</span>
+        <i></i>
+        <span>Scroll</span>
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         ABOUT
+    =========================================== -->
+
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span>01</span>
+          <h2>About Me</h2>
+        </div>
+
+
+        <div class="about-layout">
+
+          <div class="about-copy">
+
+            <h3>
+              화면과 서비스의<br>
+              사이를 연결하는<br>
+              <strong>퍼블리셔</strong>입니다.
+            </h3>
+
+            <p>
+              저는 화면을 만드는 사람이지만 화면만 보지는 않습니다.
+              사용자가 어디에서 헤매는지, 개발자가 어디에서 반복 작업을 하는지
+              함께 고민하며 더 나은 방법을 찾는 편입니다.
+            </p>
+
+            <p>
+              디자인과 퍼블리싱을 오랫동안 함께 해온 경험을 바탕으로
+              기획과 디자인, 개발 사이에서 필요한 일을 유연하게 해왔습니다.
+            </p>
+
+            <a href="#projects" class="text-link">
+              제가 해온 작업 보기 →
+            </a>
+
+          </div>
+
+
+          <div class="about-points">
+
+            <div class="about-point">
+              <span class="point-icon">◈</span>
+              <strong>12년차<br>웹 퍼블리셔</strong>
+            </div>
+
+            <div class="about-point">
+              <span class="point-icon">◉</span>
+              <strong>디자인 & 퍼블리싱<br>모두 경험</strong>
+            </div>
+
+            <div class="about-point">
+              <span class="point-icon">◇</span>
+              <strong>기획이 비어 있어도<br>UI로 채우는 사람</strong>
+            </div>
+
+            <div class="about-point">
+              <span class="point-icon">□</span>
+              <strong>개발자와 적극적으로<br>소통하는 퍼블리셔</strong>
+            </div>
+
+            <div class="about-point">
+              <span class="point-icon">◎</span>
+              <strong>기존 방식보다<br>더 나은 방법을 고민</strong>
+            </div>
+
+            <div class="about-point">
+              <span class="point-icon">∞</span>
+              <strong>반복보다<br>재사용을 선호</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         SKILLS
+    =========================================== -->
+
+    <section id="skills" class="skills section">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span>02</span>
+          <h2>Skills</h2>
+          <p>실무에서 사용하는 기술 스택입니다.</p>
+        </div>
+
+
+        <div class="skill-grid">
+
+          <div class="skill-card">
+            <div class="skill-icon html">HTML5</div>
+            <strong>HTML5</strong>
+            <span>Semantic Markup</span>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon css">CSS</div>
+            <strong>CSS / SCSS</strong>
+            <span>Responsive UI</span>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon angular">A</div>
+            <strong>Angular</strong>
+            <span>Template / Component</span>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon ts">TS</div>
+            <strong>TypeScript</strong>
+            <span>UI 협업 / 수정</span>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon git">◆</div>
+            <strong>Git</strong>
+            <span>Collaboration</span>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon figma">F</div>
+            <strong>Figma</strong>
+            <span>UI / UX Design</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PROJECTS
+    =========================================== -->
+
+    <section id="projects" class="projects section">
+
+      <div class="container">
+
+        <div class="section-heading project-heading">
+          <div>
+            <span>03</span>
+            <h2>Projects</h2>
+            <p>주요 프로젝트를 소개합니다.</p>
+          </div>
+
+          <a href="#projects" class="all-projects">
+            전체 프로젝트 보기 →
+          </a>
         </div>
 
 
         <div class="project-grid">
 
+
           <!-- 미래엔 -->
-          <article class="project-card project-card-featured">
+
+          <article class="project-card">
+
             <a href="project-detail-1.html">
 
-              <div class="card-thumb">
+              <div class="project-image">
                 <img
                   src="img/thumb_miraen.png"
-                  alt="미래엔 초등교육 쇼핑몰">
+                  alt="미래엔 초등교육 쇼핑몰"
+                >
               </div>
 
-              <div class="card-body">
+              <div class="project-info">
 
-                <div class="card-meta">
-                  <span>2024</span>
+                <h3>
+                  미래엔 초등교육 쇼핑몰
+                </h3>
+
+                <div class="project-tags">
                   <span>Angular</span>
+                  <span>TypeScript</span>
+                  <span>SCSS</span>
+                  <span>Git</span>
                 </div>
 
-                <h3>미래엔 초등교육 쇼핑몰</h3>
-
                 <p>
-                  Angular 기반 쇼핑몰 UI 구축 및 운영.
-                  공통 UI 컴포넌트와 SCSS 구조를 설계하고
-                  개발자와 협업했습니다.
+                  교육 상품 판매를 위한 쇼핑몰 구축 프로젝트.
+                  공통 컴포넌트와 반응형 UI를 구현했습니다.
                 </p>
 
-                <span class="project-link">
-                  View Project →
+                <span class="project-more">
+                  자세히 보기 →
                 </span>
 
               </div>
 
             </a>
+
           </article>
 
 
           <!-- POD -->
-          <article class="project-card project-card-featured">
+
+          <article class="project-card">
+
             <a href="project-detail-2.html">
 
-              <div class="card-thumb">
+              <div class="project-image">
                 <img
                   src="img/thumb_pod.png"
-                  alt="굿즈베이커리 POD 플랫폼">
+                  alt="굿즈베이커리 POD 플랫폼"
+                >
               </div>
 
-              <div class="card-body">
+              <div class="project-info">
 
-                <div class="card-meta">
-                  <span>2024</span>
+                <h3>
+                  POD 플랫폼
+                </h3>
+
+                <div class="project-tags">
                   <span>Angular</span>
+                  <span>HTML5</span>
+                  <span>SCSS</span>
+                  <span>JavaScript</span>
                 </div>
 
-                <h3>POD 플랫폼 · 굿즈베이커리</h3>
-
                 <p>
-                  기획자가 없는 환경에서 사용자와 관리자
-                  화면의 흐름을 직접 정리하며 구축한 POD 플랫폼입니다.
+                  기획자 없이 사용자와 관리자 페이지의
+                  흐름을 직접 정리하며 구축한 플랫폼입니다.
                 </p>
 
-                <span class="project-link">
-                  View Project →
+                <span class="project-more">
+                  자세히 보기 →
                 </span>
 
               </div>
 
             </a>
+
           </article>
 
 
           <!-- 코웨이 -->
+
           <article class="project-card">
+
             <a href="project-detail-3.html">
 
-              <div class="card-thumb">
+              <div class="project-image">
                 <img
                   src="img/thumb_coway.png"
-                  alt="코웨이 굿즈몰">
+                  alt="코웨이 굿즈몰"
+                >
               </div>
 
-              <div class="card-body">
+              <div class="project-info">
 
-                <div class="card-meta">
+                <h3>
+                  코웨이 굿즈몰
+                </h3>
+
+                <div class="project-tags">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
                   <span>Responsive</span>
-                  <span>Publisher</span>
                 </div>
-
-                <h3>코웨이 굿즈몰</h3>
 
                 <p>
                   PC/Mobile 반응형 리뉴얼 및
-                  크로스 브라우징을 고려한 퍼블리싱
+                  크로스 브라우징을 고려한 퍼블리싱입니다.
                 </p>
 
-                <span class="project-link">
-                  View Project →
+                <span class="project-more">
+                  자세히 보기 →
                 </span>
 
               </div>
 
             </a>
+
           </article>
 
 
-          <!-- AI룸메 -->
-          <article class="project-card project-card-old">
+          <!-- 프롭티어 -->
+
+          <article class="project-card">
+
             <a href="project-detail-4.html">
 
-              <div class="card-thumb">
+              <div class="project-image">
                 <img
                   src="img/thumb_airoom.png"
-                  alt="AI룸메">
+                  alt="AI룸메"
+                >
               </div>
 
-              <div class="card-body">
+              <div class="project-info">
 
-                <div class="card-meta">
-                  <span>Previous</span>
-                  <span>Design · Publishing</span>
+                <h3>
+                  AI룸메
+                </h3>
+
+                <div class="project-tags">
+                  <span>Figma</span>
+                  <span>HTML5</span>
+                  <span>CSS3</span>
                 </div>
 
-                <h3>AI룸메</h3>
-
                 <p>
-                  서비스 UI/UX 디자인 및 웹 퍼블리싱
+                  서비스 UI/UX 디자인부터 퍼블리싱까지
+                  전반적인 화면 구축에 참여했습니다.
                 </p>
 
-                <span class="project-link">
-                  View Project →
+                <span class="project-more">
+                  자세히 보기 →
                 </span>
 
               </div>
 
             </a>
+
           </article>
 
-
-          <!-- AI매니저 -->
-          <article class="project-card project-card-old">
-            <a href="project-detail-5.html">
-
-              <div class="card-thumb">
-                <img
-                  src="img/thumb_aimanager.png"
-                  alt="AI매니저">
-              </div>
-
-              <div class="card-body">
-
-                <div class="card-meta">
-                  <span>Previous</span>
-                  <span>Design · Publishing</span>
-                </div>
-
-                <h3>AI매니저</h3>
-
-                <p>
-                  상담 관리 서비스 UI 설계 및 퍼블리싱
-                </p>
-
-                <span class="project-link">
-                  View Project →
-                </span>
-
-              </div>
-
-            </a>
-          </article>
-
-
-          <!-- 방닥터 -->
-          <article class="project-card project-card-old">
-            <a href="project-detail-6.html">
-
-              <div class="card-thumb">
-                <img
-                  src="img/thumb_bangdoctor.png"
-                  alt="방닥터">
-              </div>
-
-              <div class="card-body">
-
-                <div class="card-meta">
-                  <span>Previous</span>
-                  <span>Design · Publishing</span>
-                </div>
-
-                <h3>방닥터</h3>
-
-                <p>
-                  부동산 플랫폼 UI/UX 개선 및 웹 퍼블리싱
-                </p>
-
-                <span class="project-link">
-                  View Project →
-                </span>
-
-              </div>
-
-            </a>
-          </article>
 
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact section">
+    <!-- ==========================================
+         WORK PROCESS
+    =========================================== -->
+
+    <section class="process section">
+
       <div class="container">
 
         <div class="section-heading">
-          <span class="section-number">04</span>
-          <h2>Contact</h2>
+          <span>04</span>
+          <h2>Work Process</h2>
+          <p>어떤 방식으로 일하는지 보여드립니다.</p>
         </div>
 
-        <div class="contact-content">
 
-          <h3>
-            같이 더 나은 방법을<br>
-            찾아갈 팀을 기다리고 있습니다.
-          </h3>
+        <div class="process-grid">
 
-          <p>
-            "원래 이렇게 해왔으니까"보다
-            "이렇게 하면 더 좋아지지 않을까요?"라는
-            대화가 자연스러운 팀에서 일하고 싶습니다.
-          </p>
+          <div class="process-item">
+            <span>01</span>
+            <strong>문제 파악</strong>
+            <p>
+              화면을 만들기 전에<br>
+              무엇이 필요한지 먼저 봅니다.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <span>02</span>
+            <strong>구조 설계</strong>
+            <p>
+              공통 요소와 사용자 흐름을<br>
+              정리하고 구조를 잡습니다.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <span>03</span>
+            <strong>UI 구현</strong>
+            <p>
+              디자인 의도를 살리면서<br>
+              실제 화면으로 구현합니다.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <span>04</span>
+            <strong>협업 & 개선</strong>
+            <p>
+              개발자와 의견을 나누고<br>
+              필요한 부분을 계속 개선합니다.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         CONTACT
+    =========================================== -->
+
+    <section id="contact" class="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+            <h2>
+              Let's Work Together
+            </h2>
+
+            <p>
+              원래 이렇게 해왔다고 끝내기보다,
+              <br>
+              "이렇게 하면 더 좋지 않을까요?"를
+              같이 이야기할 수 있는 팀을 찾고 있습니다.
+            </p>
+          </div>
 
           <a
-            href="mailto:your-email@example.com"
-            class="btn btn-primary">
-            Contact Me
+            href="mailto:YOUR_EMAIL@example.com"
+            class="contact-btn"
+          >
+            Contact Me →
           </a>
 
         </div>
 
       </div>
+
     </section>
 
   </main>
 
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Jo Yeonjoo. All rights reserved.</p>
+      © 2026 YJ Portfolio. All rights reserved.
     </div>
   </footer>
 
@@ -471,20 +575,29 @@
 
 
 <script>
+
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
-  menuToggle.addEventListener('click', () => {
+  menuToggle.addEventListener('click', function () {
+
     menuToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
+
   });
 
-  document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
+
+  document.querySelectorAll('.nav a').forEach(function (link) {
+
+    link.addEventListener('click', function () {
+
       menuToggle.classList.remove('active');
       navMenu.classList.remove('active');
+
     });
+
   });
+
 </script>
 
 </body>
