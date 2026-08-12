@@ -65,13 +65,14 @@ button {
 ========================================== */
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000;
   width: 100%;
   height: 72px;
   color: #fff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header-container {
