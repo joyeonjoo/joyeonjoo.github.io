@@ -1,0 +1,180 @@
+/* ==========================================
+   Project Detail Page Style
+   ========================================== */
+
+/* 전체 페이지 레이아웃 */
+.detail-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* 뒤로가기 버튼 */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6B7280;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+}
+
+.btn-back:hover {
+  color: #2563EB;
+}
+
+/* 상세페이지 타이틀 */
+.detail-header {
+  margin-bottom: 24px;
+}
+
+.detail-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1F2937;
+}
+
+/* 메인 대형 캡쳐 이미지 */
+.detail-hero-img {
+  width: 100%;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.detail-hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 개요 테이블 (프로젝트 기간, 담당 역할 등) */
+.detail-info-table {
+  background-color: #F9FAFB;
+  border: 1px solid #F3F4F6;
+  border-radius: 12px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-row {
+  display: flex;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.info-row dt {
+  width: 140px;
+  font-weight: 600;
+  color: #6B7280;
+  flex-shrink: 0;
+}
+
+.info-row dd {
+  flex: 1;
+  color: #1F2937;
+  margin: 0;
+}
+
+/* 체크리스트 (담당 업무) */
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.check-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #10B981; /* 체크 아이콘 녹색 */
+  font-weight: bold;
+}
+
+/* 주요 화면 그리드 (5개 캡쳐) */
+.screen-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.screen-item {
+  margin: 0;
+}
+
+.screen-item img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  background-color: #F9FAFB;
+  transition: transform 0.2s ease;
+}
+
+.screen-item img:hover {
+  transform: translateY(-4px);
+}
+
+.screen-item figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* 본문 섹션 및 여백 */
+.detail-section {
+  margin: 32px 0;
+}
+
+.detail-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 12px;
+}
+
+.detail-section p {
+  color: #4B5563;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.mt-20 {
+  margin-top: 24px;
+}
+
+/* 모바일 반응형 처리 */
+@media (max-width: 768px) {
+  .info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .info-row dt {
+    width: 100%;
+  }
+
+  .screen-grid {
+    grid-template-columns: repeat(2, 1fr); /* 모바일에선 2열로 */
+  }
+}
