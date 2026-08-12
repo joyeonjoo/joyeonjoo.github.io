@@ -1,130 +1,353 @@
-<section class="section screens-section">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="container">
+  <title>미래엔 초등교육 쇼핑몰 | YJ Portfolio</title>
 
-    <div class="section-number">
-      04
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/detail.css">
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="container header-container">
+
+      <a href="main.html" class="logo">
+        YJ Portfolio
+      </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="main.html#about">ABOUT</a></li>
+          <li><a href="main.html#skills">SKILLS</a></li>
+          <li><a href="main.html#career">CAREER</a></li>
+          <li><a href="main.html#projects">PROJECTS</a></li>
+          <li><a href="main.html#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+
     </div>
 
-    <div class="section-title">
-
-      <span>KEY SCREENS</span>
-
-      <h2>
-        주요 화면
-      </h2>
-
-      <p>
-        실제 프로젝트에서 구현한 주요 UI 화면입니다.
-      </p>
-
-    </div>
+  </header>
 
 
-    <!-- MAIN SCREEN -->
+  <!-- DETAIL -->
+  <main class="project-detail">
 
-    <div class="screen-main">
+    <div class="container">
 
-      <img
-        src="img/thumb_miraen.png"
-        alt="미래엔 초등교육 쇼핑몰 메인 화면"
-      >
 
-    </div>
+      <!-- 뒤로가기 -->
 
-    <div class="screen-caption">
+      <a href="main.html#projects" class="detail-back">
+        ← 프로젝트 목록으로
+      </a>
 
-      <span>01</span>
 
-      <div>
-        <strong>Shopping Mall UI</strong>
+      <!-- 제목 -->
 
-        <p>
-          교육 상품을 탐색하고 구매할 수 있는
-          쇼핑몰 주요 화면 퍼블리싱
-        </p>
+      <div class="detail-title">
+
+        <div>
+          <h1>
+            미래엔 초등교육 쇼핑몰
+
+            <span class="detail-badge">
+              Angular
+            </span>
+          </h1>
+        </div>
+
       </div>
 
+
+      <!-- 대표 이미지 -->
+
+      <div class="detail-cover">
+
+        <img
+          src="img/thumb_miraen.png"
+          alt="미래엔 초등교육 쇼핑몰"
+        >
+
+      </div>
+
+
+      <!-- 기본 정보 -->
+
+      <div class="detail-info">
+
+        <div class="info-row">
+
+          <strong>프로젝트 기간</strong>
+
+          <span>
+            2024.04 ~ 2024.08
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <strong>담당 역할</strong>
+
+          <span>
+            웹 퍼블리셔 (100%)
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <strong>기술 스택</strong>
+
+          <span>
+            Angular, TypeScript, HTML5, SCSS, Git, Figma
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <strong>프로젝트 소개</strong>
+
+          <span>
+            초등 교육 관련 상품을 판매하는 쇼핑몰을
+            Angular 기반으로 구축하고,
+            공통 UI 컴포넌트를 설계하여 유지보수성과
+            재사용성을 높였습니다.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- 담당 업무 -->
+
+      <section class="detail-section">
+
+        <h2>
+          담당 업무
+        </h2>
+
+
+        <ul class="work-list">
+
+          <li>
+            <span>✓</span>
+            Angular 템플릿 작성 및 TypeScript 수정
+          </li>
+
+          <li>
+            <span>✓</span>
+            재사용 가능한 공통 UI 컴포넌트 설계 및 제작
+          </li>
+
+          <li>
+            <span>✓</span>
+            SCSS 변수 및 mixin 기반 스타일 시스템 구축
+          </li>
+
+          <li>
+            <span>✓</span>
+            Angular 라우팅 및 컴포넌트 구조 개선
+          </li>
+
+          <li>
+            <span>✓</span>
+            Git 협업 및 코드 리뷰 참여
+          </li>
+
+          <li>
+            <span>✓</span>
+            반응형 UI 구현 및 웹 접근성을 고려한 마크업
+          </li>
+
+        </ul>
+
+      </section>
+
+
+      <!-- 주요 화면 -->
+
+      <section class="detail-section">
+
+        <h2>
+          주요 화면
+        </h2>
+
+
+        <div class="screen-list">
+
+
+          <figure class="screen-item">
+
+            <img
+              src="img/detail1_2.png"
+              alt="미래엔 초등교육 쇼핑몰 주요 화면 1"
+            >
+
+            <figcaption>
+              <strong>메인</strong>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="screen-item">
+
+            <img
+              src="img/detail1_3.png"
+              alt="미래엔 초등교육 쇼핑몰 주요 화면 2"
+            >
+
+            <figcaption>
+              <strong>상품 목록</strong>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="screen-item">
+
+            <img
+              src="img/detail1_4.png"
+              alt="미래엔 초등교육 쇼핑몰 주요 화면 3"
+            >
+
+            <figcaption>
+              <strong>상품 상세</strong>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="screen-item">
+
+            <img
+              src="img/detail1_5.png"
+              alt="미래엔 초등교육 쇼핑몰 주요 화면 4"
+            >
+
+            <figcaption>
+              <strong>장바구니 / 주문</strong>
+            </figcaption>
+
+          </figure>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- 어려웠던 점 -->
+
+      <section class="detail-section">
+
+        <h2>
+          어려웠던 점
+        </h2>
+
+        <p class="detail-text">
+
+          기존에 공통 컴포넌트가 없어 동일한 UI가
+          여러 화면에 중복되어 있었고,
+          유지보수가 어려웠습니다.
+
+          또한 Angular 기반 프로젝트였기 때문에
+          단순 HTML/CSS 퍼블리싱뿐만 아니라
+          템플릿 구조와 컴포넌트 단위의 구현을
+          함께 고려해야 했습니다.
+
+        </p>
+
+      </section>
+
+
+      <!-- 해결 방법 -->
+
+      <section class="detail-section">
+
+        <h2>
+          해결 방법
+        </h2>
+
+        <p class="detail-text">
+
+          반복적으로 사용되는 UI를 공통 컴포넌트로
+          설계하여 재사용할 수 있도록 구조화했습니다.
+
+          SCSS 변수와 mixin을 활용해 반복되는
+          스타일을 관리하고,
+          Angular 템플릿과 컴포넌트 구조에 맞춰
+          퍼블리싱을 진행했습니다.
+
+        </p>
+
+      </section>
+
+
+      <!-- 결과 -->
+
+      <section class="detail-section">
+
+        <h2>
+          결과 및 배운 점
+        </h2>
+
+        <p class="detail-text">
+
+          공통 UI를 기반으로 화면을 구성하면서
+          반복적인 퍼블리싱 작업을 줄이고
+          유지보수가 쉬운 구조를 만들 수 있었습니다.
+
+          또한 Angular 프로젝트에서 퍼블리셔가
+          단순히 화면을 구현하는 역할을 넘어
+          컴포넌트 구조와 개발 환경까지 이해하고
+          협업하는 것이 중요하다는 것을 경험했습니다.
+
+        </p>
+
+      </section>
+
+
     </div>
 
-
-    <!-- DETAIL SCREENS -->
-
-    <div class="detail-screen-list">
-
-      <figure class="detail-screen">
-
-        <img
-          src="img/detail1_2.png"
-          alt="미래엔 초등교육 쇼핑몰 화면 2"
-        >
-
-        <figcaption>
-          <span>02</span>
-          <div>
-            <strong>상품 목록</strong>
-            <p>상품 탐색 및 목록 UI 구현</p>
-          </div>
-        </figcaption>
-
-      </figure>
+  </main>
 
 
-      <figure class="detail-screen">
+  <!-- FOOTER -->
 
-        <img
-          src="img/detail1_3.png"
-          alt="미래엔 초등교육 쇼핑몰 화면 3"
-        >
+  <footer class="detail-footer">
 
-        <figcaption>
-          <span>03</span>
-          <div>
-            <strong>상품 상세</strong>
-            <p>상품 정보 및 구매 영역 UI 구현</p>
-          </div>
-        </figcaption>
+    <div class="container">
 
-      </figure>
+      <span>
+        © 2026 YJ Portfolio
+      </span>
 
-
-      <figure class="detail-screen">
-
-        <img
-          src="img/detail1_4.png"
-          alt="미래엔 초등교육 쇼핑몰 화면 4"
-        >
-
-        <figcaption>
-          <span>04</span>
-          <div>
-            <strong>주요 서비스 화면</strong>
-            <p>서비스 흐름에 따른 UI 구성</p>
-          </div>
-        </figcaption>
-
-      </figure>
-
-
-      <figure class="detail-screen">
-
-        <img
-          src="img/detail1_5.png"
-          alt="미래엔 초등교육 쇼핑몰 화면 5"
-        >
-
-        <figcaption>
-          <span>05</span>
-          <div>
-            <strong>반응형 UI</strong>
-            <p>다양한 화면 환경을 고려한 UI 구현</p>
-          </div>
-        </figcaption>
-
-      </figure>
+      <a href="main.html#projects">
+        Projects →
+      </a>
 
     </div>
 
-  </div>
+  </footer>
 
-</section>
+
+</div>
+
+</body>
+</html>
