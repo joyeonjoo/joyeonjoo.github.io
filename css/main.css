@@ -65,7 +65,7 @@ button {
 ========================================== */
 
 .header {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
@@ -78,6 +78,31 @@ button {
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+.header.scrolled {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 3px 15px rgba(20, 30, 50, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.header.scrolled .nav a {
+  color: var(--text-sub);
+}
+
+.header.scrolled .nav a:hover {
+  color: var(--blue);
+}
+
+.header.scrolled .header-resume {
+  color: #fff;
+  background: var(--navy);
+}
+
+.header.scrolled .header-toggle span {
+  background: var(--text);
 }
 
 .logo {
