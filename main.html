@@ -3,151 +3,478 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yeonjoo Jo | Portfolio</title>
+  <meta name="description" content="12년차 웹 퍼블리셔 조연주의 포트폴리오">
+  <title>Yeonjoo Jo | Web Publisher</title>
   <link rel="stylesheet" href="css/main.css">
-  
-  
-  
 </head>
+
 <body>
-  <div class="wrap">
-    <header class="header">
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="header">
     <div class="container header-container">
-      <h1 class="logo">Jo Yeonjoo</h1>
-      
-      <button type="button" class="header-toggle" id="menuToggle" aria-label="메뉴 열기">
+
+      <h1 class="logo">
+        <a href="#home">Jo Yeonjoo</a>
+      </h1>
+
+      <button
+        type="button"
+        class="header-toggle"
+        id="menuToggle"
+        aria-label="메뉴 열기">
         <span></span>
         <span></span>
         <span></span>
       </button>
-  
+
       <nav class="nav" id="navMenu">
         <ul>
           <li><a href="#home" class="active">HOME</a></li>
           <li><a href="#about">ABOUT</a></li>
-          <li><a href="#skills">SKILLS</a></li>
           <li><a href="#career">CAREER</a></li>
           <li><a href="#projects">PROJECTS</a></li>
           <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
-    </div>
-  </header>  
 
-  <section id="home" class="hero">
-    <div class="container hero-container">
-      <div class="hero-text">
-        <h2>사용자 경험을<br>중심으로 생각하는<br><strong>웹 퍼블리셔</strong></h2>
-        <p>12년간 다양한 프로젝트에서<br>웹 퍼블리싱과 UI/UX 디자인을 수행해왔습니다.</p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-          <a href="#" class="btn btn-outline">이력서 다운로드</a>
+    </div>
+  </header>
+
+
+  <!-- HOME -->
+  <main>
+
+    <section id="home" class="hero">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <span class="hero-label">WEB PUBLISHER · 12 YEARS</span>
+
+          <h2>
+            기획서의 빈칸을 UI로 채우는<br>
+            <strong>조금은 오지랖 넓은 퍼블리셔입니다.</strong>
+          </h2>
+
+          <p class="hero-description">
+            화면을 만드는 것에서 끝내지 않고<br>
+            사용자의 흐름과 개발자의 유지보수까지 함께 고민합니다.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              프로젝트 보기
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+              더 알아보기
+            </a>
+          </div>
+
         </div>
+
+        <div class="hero-info">
+
+          <div class="hero-info-item">
+            <span>CAREER</span>
+            <strong>12 YEARS</strong>
+          </div>
+
+          <div class="hero-info-item">
+            <span>MAIN</span>
+            <strong>WEB PUBLISHING</strong>
+          </div>
+
+          <div class="hero-info-item">
+            <span>FOCUS</span>
+            <strong>UI · UX · FRONTEND</strong>
+          </div>
+
+        </div>
+
       </div>
-      <div class="hero-image">
-        <div class="img-placeholder">UI Graphic / Illustration</div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <h2>About</h2>
+        </div>
+
+        <div class="about-content">
+
+          <div class="about-title">
+            <h3>
+              화면보다<br>
+              <strong>흐름을 먼저 봅니다.</strong>
+            </h3>
+          </div>
+
+          <div class="about-text">
+            <p>
+              작업하다 보면 "이 버튼이 여기 있으면 사용자가 헤매지 않을까?",
+              "이건 공통으로 만들면 다음 수정이 훨씬 편하지 않을까?"
+              같은 생각을 자주 합니다.
+            </p>
+
+            <p>
+              누가 시켜서라기보다 그냥 그런 것들이 먼저 보입니다.
+              기획이 비어 있으면 흐름을 정리하고,
+              반복되는 작업이 보이면 공통 컴포넌트를 고민합니다.
+            </p>
+
+            <p>
+              12년 동안 디자인과 퍼블리싱을 함께 경험하면서
+              사용자에게는 자연스럽고 개발자에게는 유지보수하기 좋은
+              UI를 만드는 것을 중요하게 생각하게 됐습니다.
+            </p>
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </section>
-  <!-- 프로젝트 섹션 -->
-  <section id="projects" class="projects">
+    </section>
+
+
+    <!-- CAREER -->
+    <section id="career" class="career section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <h2>Career</h2>
+        </div>
+
+        <div class="career-list">
+
+          <article class="career-item">
+            <div class="career-period">
+              2024.03 — NOW
+            </div>
+
+            <div class="career-info">
+              <h3>블루스톤익스체인지</h3>
+              <span>Web Publisher</span>
+
+              <p>
+                Angular 기반 쇼핑몰 및 POD 플랫폼 구축·운영
+              </p>
+
+              <div class="career-tags">
+                <span>Angular</span>
+                <span>TypeScript</span>
+                <span>SCSS</span>
+                <span>Git</span>
+                <span>Figma</span>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="career-item">
+            <div class="career-period">
+              2017.06 — 2022.12
+            </div>
+
+            <div class="career-info">
+              <h3>프롭티어</h3>
+              <span>UI/UX Designer · Publisher</span>
+
+              <p>
+                서비스 UI/UX 디자인 및 웹 퍼블리싱
+              </p>
+
+              <div class="career-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Figma</span>
+                <span>Adobe XD</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <h2>Selected Projects</h2>
+          <p>
+            최근 프로젝트를 중심으로 정리했습니다.
+          </p>
+        </div>
+
+
+        <div class="project-grid">
+
+          <!-- 미래엔 -->
+          <article class="project-card project-card-featured">
+            <a href="project-detail-1.html">
+
+              <div class="card-thumb">
+                <img
+                  src="img/thumb_miraen.png"
+                  alt="미래엔 초등교육 쇼핑몰">
+              </div>
+
+              <div class="card-body">
+
+                <div class="card-meta">
+                  <span>2024</span>
+                  <span>Angular</span>
+                </div>
+
+                <h3>미래엔 초등교육 쇼핑몰</h3>
+
+                <p>
+                  Angular 기반 쇼핑몰 UI 구축 및 운영.
+                  공통 UI 컴포넌트와 SCSS 구조를 설계하고
+                  개발자와 협업했습니다.
+                </p>
+
+                <span class="project-link">
+                  View Project →
+                </span>
+
+              </div>
+
+            </a>
+          </article>
+
+
+          <!-- POD -->
+          <article class="project-card project-card-featured">
+            <a href="project-detail-2.html">
+
+              <div class="card-thumb">
+                <img
+                  src="img/thumb_pod.png"
+                  alt="굿즈베이커리 POD 플랫폼">
+              </div>
+
+              <div class="card-body">
+
+                <div class="card-meta">
+                  <span>2024</span>
+                  <span>Angular</span>
+                </div>
+
+                <h3>POD 플랫폼 · 굿즈베이커리</h3>
+
+                <p>
+                  기획자가 없는 환경에서 사용자와 관리자
+                  화면의 흐름을 직접 정리하며 구축한 POD 플랫폼입니다.
+                </p>
+
+                <span class="project-link">
+                  View Project →
+                </span>
+
+              </div>
+
+            </a>
+          </article>
+
+
+          <!-- 코웨이 -->
+          <article class="project-card">
+            <a href="project-detail-3.html">
+
+              <div class="card-thumb">
+                <img
+                  src="img/thumb_coway.png"
+                  alt="코웨이 굿즈몰">
+              </div>
+
+              <div class="card-body">
+
+                <div class="card-meta">
+                  <span>Responsive</span>
+                  <span>Publisher</span>
+                </div>
+
+                <h3>코웨이 굿즈몰</h3>
+
+                <p>
+                  PC/Mobile 반응형 리뉴얼 및
+                  크로스 브라우징을 고려한 퍼블리싱
+                </p>
+
+                <span class="project-link">
+                  View Project →
+                </span>
+
+              </div>
+
+            </a>
+          </article>
+
+
+          <!-- AI룸메 -->
+          <article class="project-card project-card-old">
+            <a href="project-detail-4.html">
+
+              <div class="card-thumb">
+                <img
+                  src="img/thumb_airoom.png"
+                  alt="AI룸메">
+              </div>
+
+              <div class="card-body">
+
+                <div class="card-meta">
+                  <span>Previous</span>
+                  <span>Design · Publishing</span>
+                </div>
+
+                <h3>AI룸메</h3>
+
+                <p>
+                  서비스 UI/UX 디자인 및 웹 퍼블리싱
+                </p>
+
+                <span class="project-link">
+                  View Project →
+                </span>
+
+              </div>
+
+            </a>
+          </article>
+
+
+          <!-- AI매니저 -->
+          <article class="project-card project-card-old">
+            <a href="project-detail-5.html">
+
+              <div class="card-thumb">
+                <img
+                  src="img/thumb_aimanager.png"
+                  alt="AI매니저">
+              </div>
+
+              <div class="card-body">
+
+                <div class="card-meta">
+                  <span>Previous</span>
+                  <span>Design · Publishing</span>
+                </div>
+
+                <h3>AI매니저</h3>
+
+                <p>
+                  상담 관리 서비스 UI 설계 및 퍼블리싱
+                </p>
+
+                <span class="project-link">
+                  View Project →
+                </span>
+
+              </div>
+
+            </a>
+          </article>
+
+
+          <!-- 방닥터 -->
+          <article class="project-card project-card-old">
+            <a href="project-detail-6.html">
+
+              <div class="card-thumb">
+                <img
+                  src="img/thumb_bangdoctor.png"
+                  alt="방닥터">
+              </div>
+
+              <div class="card-body">
+
+                <div class="card-meta">
+                  <span>Previous</span>
+                  <span>Design · Publishing</span>
+                </div>
+
+                <h3>방닥터</h3>
+
+                <p>
+                  부동산 플랫폼 UI/UX 개선 및 웹 퍼블리싱
+                </p>
+
+                <span class="project-link">
+                  View Project →
+                </span>
+
+              </div>
+
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-number">04</span>
+          <h2>Contact</h2>
+        </div>
+
+        <div class="contact-content">
+
+          <h3>
+            같이 더 나은 방법을<br>
+            찾아갈 팀을 기다리고 있습니다.
+          </h3>
+
+          <p>
+            "원래 이렇게 해왔으니까"보다
+            "이렇게 하면 더 좋아지지 않을까요?"라는
+            대화가 자연스러운 팀에서 일하고 싶습니다.
+          </p>
+
+          <a
+            href="mailto:your-email@example.com"
+            class="btn btn-primary">
+            Contact Me
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
-      
-      <div class="project-grid">
-        
-        <article class="project-card">
-          <a href="project-detail-1.html">
-            <div class="card-thumb">
-              <img src="img/thumb_miraen.png" alt="미래엔 초등교육 쇼핑몰 썸네일">
-            </div>
-            <div class="card-body">
-              <span class="badge badge-angular">Angular</span>
-              <span class="badge badge-blue">Publisher</span>
-              <h3 class="card-title">미래엔 초등교육 쇼핑몰</h3>
-              <p class="card-desc">초등 교육 관련 상품 쇼핑몰 구축 및 운영</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="project-detail-2.html">
-            <div class="card-thumb">
-              <img src="img/thumb_pod.png" alt="POD 플랫폼 썸네일">
-            </div>
-            <div class="card-body">
-              <span class="badge badge-angular">Angular</span>
-              <span class="badge badge-blue">Publisher</span>
-              <h3 class="card-title">POD 플랫폼(굿즈베이커리)</h3>
-              <p class="card-desc">POD 굿즈 제작 플랫폼 구축 및 유저/어드민 운영</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="project-detail-3.html">
-            <div class="card-thumb">
-              <img src="img/thumb_coway.png" alt="코웨이 굿즈몰 썸네일">
-            </div>
-            <div class="card-body">
-              <span class="badge badge-green">Responsive</span>
-              <span class="badge badge-blue">Publisher</span>
-              <h3 class="card-title">코웨이 굿즈몰 리뉴얼</h3>
-              <p class="card-desc">PC/Mobile 반응형 리뉴얼 및 UI 개선</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="project-detail-4.html">
-            <div class="card-thumb">
-              <img src="img/thumb_airoom.png" alt="AI룸메 썸네일">
-            </div>
-            <div class="card-body">
-              <span class="badge badge-orange">Design</span>
-              <span class="badge badge-blue">Publisher</span>
-              <h3 class="card-title">AI룸메</h3>
-              <p class="card-desc">서비스 UI/UX 디자인 및 웹 퍼블리싱</p>
-            </div>
-          </a>
-        </article>
-
-        
-        <article class="project-card">
-          <a href="project-detail-5.html">
-            <div class="card-thumb">
-              <img src="img/thumb_aimanager.png" alt="AI매니저 썸네일">
-            </div>
-            <div class="card-body">
-              <span class="badge badge-orange">Design</span>
-              <span class="badge badge-blue">Publisher</span>
-              <h3 class="card-title">AI매니저</h3>
-              <p class="card-desc">상담 관리 서비스 UI 설계 및 퍼블리싱</p>
-            </div>
-          </a>
-        </article>
-
-        
-        <article class="project-card">
-          <a href="project-detail-6.html">
-            <div class="card-thumb">
-              <img src="img/thumb_bangdoctor.png" alt="방닥터 썸네일">
-            </div>
-            <div class="card-body">
-              <span class="badge badge-design">Design</span>
-              <span class="badge badge-blue">Publisher</span>
-              <h3 class="card-title">방닥터</h3>
-              <p class="card-desc">부동산 플랫폼 UI/UX 개선 및 웹 퍼블리싱</p>
-            </div>
-          </a>
-        </article>
-
-      </div>
+      <p>© 2026 Jo Yeonjoo. All rights reserved.</p>
     </div>
-  </section>
+  </footer>
 
-  <script type="text/javascript" src="js/common.js"></script>
-  <script>
+</div>
+
+
+<script>
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -161,7 +488,8 @@
       menuToggle.classList.remove('active');
       navMenu.classList.remove('active');
     });
-  });  
-  </script>
+  });
+</script>
+
 </body>
 </html>
