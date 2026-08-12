@@ -202,6 +202,316 @@
 }
 
 
+/* =========================================
+   UI SYSTEM
+========================================= */
+
+.ui-system-section {
+  padding-bottom: 50px;
+}
+
+.ui-system-desc {
+  margin-top: -10px;
+  margin-bottom: 25px;
+
+  color: var(--text-gray);
+
+  font-size: 12px;
+}
+
+
+/* UI GRID */
+
+.ui-system-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+
+.ui-system-box {
+  min-height: 190px;
+
+  padding: 22px;
+
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+
+  background: #fff;
+}
+
+
+.ui-system-box h3 {
+  margin-bottom: 20px;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   COLOR
+========================================= */
+
+.color-list {
+  display: flex;
+  gap: 14px;
+}
+
+.color-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.color-chip {
+  display: block;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 6px;
+}
+
+
+.color-primary {
+  background: #2563EB;
+}
+
+.color-dark {
+  background: #1F2937;
+}
+
+.color-gray {
+  background: #6B7280;
+}
+
+.color-light {
+  background: #F3F4F6;
+
+  border: 1px solid #E5E7EB;
+}
+
+
+.color-item strong {
+  font-size: 9px;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.type-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.type-item {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.type-item > span {
+  width: 35px;
+
+  color: var(--text-gray);
+
+  font-size: 9px;
+}
+
+
+.type-h1 strong {
+  font-size: 20px;
+}
+
+.type-h2 strong {
+  font-size: 16px;
+}
+
+.type-h3 strong {
+  font-size: 13px;
+}
+
+.type-body p {
+  color: var(--text-gray);
+
+  font-size: 11px;
+}
+
+
+.font-name {
+  margin-top: 18px;
+
+  color: var(--text-gray);
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.button-preview {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.ui-btn {
+  padding: 10px 20px;
+
+  border-radius: 5px;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: default;
+}
+
+
+.ui-btn-primary {
+  border: 1px solid #2563EB;
+
+  background: #2563EB;
+
+  color: #fff;
+}
+
+
+.ui-btn-secondary {
+  border: 1px solid #D1D5DB;
+
+  background: #fff;
+
+  color: #1F2937;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.icon-list {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+.ui-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  color: #1F2937;
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.ui-system-card {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  margin-top: 12px;
+
+  min-height: 120px;
+
+  padding: 15px;
+
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+
+  background: #fff;
+}
+
+
+.ui-card-thumb {
+  width: 90px;
+  height: 90px;
+
+  margin-right: 18px;
+
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #F3F4F6,
+      #E5E7EB
+    );
+
+  flex-shrink: 0;
+}
+
+
+.ui-card-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.ui-card-content strong {
+  font-size: 13px;
+}
+
+
+.ui-card-content p {
+  color: var(--text-gray);
+
+  font-size: 10px;
+}
+
+
+.ui-card-tag {
+  align-self: flex-start;
+
+  padding: 3px 7px;
+
+  border-radius: 4px;
+
+  background: #EFF6FF;
+
+  color: #2563EB;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+.ui-card-arrow {
+  position: absolute;
+
+  right: 20px;
+
+  color: var(--text-gray);
+
+  font-size: 18px;
+}
 /* 모바일 */
 
 @media (max-width: 768px) {
