@@ -608,6 +608,9 @@
 /* 모바일 */
 
 @media (max-width: 768px) {
+   .detail-header .nav ul{
+      overflow:auto;
+   }
    .ui-system-grid{
       grid-template-columns: 1fr;
    }
