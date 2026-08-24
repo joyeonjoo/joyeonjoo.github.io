@@ -608,6 +608,9 @@
 /* 모바일 */
 
 @media (max-width: 768px) {
+   .ui-system-grid{
+      grid-template-columns: 1fr;
+   }
 
   .project-detail {
     padding-top: 100px;
