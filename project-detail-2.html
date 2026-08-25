@@ -1,108 +1,483 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>미래엔 초등교육 쇼핑몰 - 상세보기</title>
-  <link rel="stylesheet" href="css/detail.css">
+
+  <title>POD 플랫폼 (굿즈베이커리) | YJ Portfolio</title>
+
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/detail.css">
 </head>
+
 <body>
 
-  <main class="detail-page container">
-    <!-- 뒤로가기 -->
-    <a href="main.html#projects" class="btn-back">&lt; 프로젝트 목록으로</a>
+<div class="wrap">
 
-    <!-- 헤더 영역 -->
-    <header class="detail-header">
-      <h2>POD 플랫폼 (굿즈베이커리) <span class="badge badge-angular">Angular</span></h2>
-    </header>
+  <!-- HEADER -->
+  <header class="header detail-header">
+  <div class="container header-container">
 
-    <!-- 메인 대형 메인 이미지/캡쳐 -->
-    <div class="detail-hero-img">
-      <img src="img/design2_pod.png" alt="POD 플랫폼 메인 화면">
-    </div>
+    <a href="main.html" class="logo">
+      YJ Portfolio
+    </a>
 
-    <!-- 프로젝트 개요 테이블 -->
-    <div class="detail-info-table">
-      <dl class="info-row">
-        <dt>프로젝트 기간</dt>
-        <dd>2024.04 ~ 2024.08</dd>
-      </dl>
-      <dl class="info-row">
-        <dt>담당 역할</dt>
-        <dd>웹 퍼블리서 (100%)</dd>
-      </dl>
-      <dl class="info-row">
-        <dt>기술 스택</dt>
-        <dd>Angular, TypeScript, HTML5, SCSS, Git, Figma</dd>
-      </dl>
-      <dl class="info-row">
-        <dt>프로젝트 소개</dt>
-        <dd>초등 교육 관련 상품을 판매하는 쇼핑몰을 Angular 기반으로 구축하고, 공통 UI 컴포넌트를 설계하여 유지보수성과 재사용성을 높였습니다.</dd>
-      </dl>
-    </div>
-
-    <hr class="divider">
-
-    <!-- 담당 업무 -->
-    <section class="detail-section">
-      <h3>담당 업무</h3>
-      <ul class="check-list">
-        <li>Angular Template 작성 및 TypeScript 수정</li>
-        <li>재사용 가능한 공통 UI 컴포넌트 설계 및 제작</li>
-        <li>SCSS 변수 및 mixin 기반 스타일 시스템 구축</li>
-        <li>Angular 라우팅 및 컴포넌트 구조 개선</li>
-        <li>Git 협업 및 코드 리뷰 참여</li>
-        <li>반응형 웹 구현 및 웹 접근성 고려한 마크업 작성</li>
+    <nav class="nav">
+      <ul>
+        <li><a href="main.html#about">ABOUT</a></li>
+        <li><a href="main.html#skills">SKILLS</a></li>
+        <li><a href="main.html#career">CAREER</a></li>
+        <li><a href="main.html#projects">PROJECTS</a></li>
+        <li><a href="main.html#contact">CONTACT</a></li>
       </ul>
-    </section>
+    </nav>
 
-    <hr class="divider">
+  </div>
+</header>
 
-    <!-- 주요 화면 -->
-    <section class="detail-section">
-      <h3>주요 화면</h3>
-      <div class="screen-grid">
-        <figure class="screen-item">
-          <img src="images/screen1.jpg" alt="메인">
-          <figcaption>메인</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="images/screen2.jpg" alt="상품 목록">
-          <figcaption>상품 목록</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="images/screen3.jpg" alt="상품 상세">
-          <figcaption>상품 상세</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="images/screen4.jpg" alt="장바구니">
-          <figcaption>장바구니</figcaption>
-        </figure>
-        <figure class="screen-item">
-          <img src="images/screen5.jpg" alt="주문/결제">
-          <figcaption>주문/결제</figcaption>
-        </figure>
+
+  <!-- DETAIL -->
+  <main class="project-detail">
+
+    <div class="container">
+
+
+      <!-- 뒤로가기 -->
+
+      <a href="main.html#projects" class="detail-back">
+        ← 프로젝트 목록으로
+      </a>
+
+
+      <!-- 제목 -->
+
+      <div class="detail-title">
+
+        <div>
+          <h1>
+            POD 플랫폼 (굿즈베이커리)
+
+            <span class="detail-badge">
+              Angular
+            </span>
+          </h1>
+        </div>
+
       </div>
-    </section>
 
-    <hr class="divider">
 
-    <!-- 어려웠던 점 & 해결 방법 & 결과 -->
-    <section class="detail-section">
-      <h3>어려웠던 점</h3>
-      <p>기존에 공통 컴포넌트가 없어 동일한 UI가 여러 페이지에 중복되어 유지보수가 어려웠고, 스타일 관리가 일관되지 않아 디자인 수정 시 많은 시간이 소요되었습니다.</p>
+      <!-- 대표 이미지 -->
 
-      <h3 class="mt-20">해결 방법</h3>
-      <p>공통 UI 컴포넌트를 설계하여 재사용 가능하도록 구조화하고, SCSS 변수와 mixin을 활용해 스타일 시스템을 구축하여 유지보수 효율을 향상시켰습니다.</p>
+      <div class="detail-cover">
 
-      <h3 class="mt-20">결과 및 배운 점</h3>
-      <p>코드 중복이 줄어 유지보수가 쉬워졌고, 개발자와의 협업 효율이 높아졌습니다. 컴포넌트 기반 설계의 중요성과 체계적인 스타일 관리의 필요성을 배웠습니다.</p>
-    </section>
+        <img
+          src="img/thumb_pod.png"
+          alt="POD 플랫폼 메인 화면"
+        >
+
+      </div>
+
+
+      <!-- 기본 정보 -->
+
+      <div class="detail-info">
+
+        <div class="info-row">
+
+          <strong>프로젝트 기간</strong>
+
+          <span>
+            2024.06 ~ 2024.12
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <strong>담당 역할</strong>
+
+          <span>
+            웹 퍼블리셔 (100%)
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <strong>기술 스택</strong>
+
+          <span>
+            Angular, TypeScript, HTML5, SCSS, Git, Figma
+          </span>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <strong>프로젝트 소개</strong>
+
+          <span>
+            POD(Print on Demand) 기반 굿즈 제작 플랫폼 구축 프로젝트입니다.
+기획자가 별도로 없는 환경에서 유저·관리자 페이지의 화면 흐름과 UI 구조를 함께 고민하며 퍼블리싱을 전담했습니다.
+            Angular 기반 공통 컴포넌트 구축부터 반응형 UI, 운영 및 유지보수까지 참여했습니다.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- 담당 업무 -->
+
+      <section class="detail-section">
+
+        <h2>
+          담당 업무
+        </h2>
+
+
+        <ul class="work-list">
+
+          <li>
+            <span>✓</span>
+            Angular 템플릿 작성 및 TypeScript 수정
+          </li>
+
+          <li>
+            <span>✓</span>
+            재사용 가능한 공통 UI 컴포넌트 설계 및 제작
+          </li>
+
+          <li>
+            <span>✓</span>
+            SCSS 변수 및 mixin 기반 스타일 시스템 구축
+          </li>
+
+          <li>
+            <span>✓</span>
+            Angular 라우팅 및 컴포넌트 구조 개선
+          </li>
+
+          <li>
+            <span>✓</span>
+            Git 협업 및 코드 리뷰 참여
+          </li>
+
+          <li>
+            <span>✓</span>
+            반응형 UI 구현 및 웹 접근성을 고려한 마크업
+          </li>
+
+        </ul>
+
+      </section>
+
+
+      <!-- 주요 화면 -->
+
+      <section class="detail-section">
+
+        <h2>
+          주요 화면
+        </h2>
+
+
+        <div class="screen-list">
+
+
+          <figure class="screen-item">
+
+            
+                <img
+                  src="img/design2_pod.png"
+                  alt="POD 플랫폼 메인 화면"
+                >
+
+            <figcaption>
+              <strong>메인</strong>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="screen-item">
+
+            <img
+              src="img/design0.png"
+              alt="POD 플랫폼 주요 화면 2"
+            >
+
+            <figcaption>
+              <strong>상품 목록</strong>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="screen-item">
+
+            <img
+              src="img/design3_pod.png"
+              alt="POD 플랫폼 주요 화면 3"
+            >
+
+            <figcaption>
+              <strong>상품 상세</strong>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="screen-item">
+
+            <img
+              src="img/design4_pod.png"
+              alt="POD 플랫폼 주요 화면 4"
+            >
+
+            <figcaption>
+              <strong>장바구니 / 주문</strong>
+            </figcaption>
+
+          </figure>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- 어려웠던 점 -->
+
+      <section class="detail-section">
+
+        <h2>
+          어려웠던 점
+        </h2>
+
+        <p class="detail-text">
+
+          기존에 공통 컴포넌트가 없어 동일한 UI가
+          여러 화면에 중복되어 있었고,
+          유지보수가 어려웠습니다.
+
+          또한 Angular 기반 프로젝트였기 때문에
+          단순 HTML/CSS 퍼블리싱뿐만 아니라
+          템플릿 구조와 컴포넌트 단위의 구현을
+          함께 고려해야 했습니다.
+
+        </p>
+
+      </section>
+
+
+      <!-- 해결 방법 -->
+
+      <section class="detail-section">
+
+        <h2>
+          해결 방법
+        </h2>
+
+        <p class="detail-text">
+
+          반복적으로 사용되는 UI를 공통 컴포넌트로
+          설계하여 재사용할 수 있도록 구조화했습니다.
+
+          SCSS 변수와 mixin을 활용해 반복되는
+          스타일을 관리하고,
+          Angular 템플릿과 컴포넌트 구조에 맞춰
+          퍼블리싱을 진행했습니다.
+
+        </p>
+
+      </section>
+
+
+      <!-- 결과 -->
+
+      <section class="detail-section">
+
+        <h2>
+          결과 및 배운 점
+        </h2>
+
+        <p class="detail-text">
+
+          공통 UI를 기반으로 화면을 구성하면서
+          반복적인 퍼블리싱 작업을 줄이고
+          유지보수가 쉬운 구조를 만들 수 있었습니다.
+
+          또한 Angular 프로젝트에서 퍼블리셔가
+          단순히 화면을 구현하는 역할을 넘어
+          컴포넌트 구조와 개발 환경까지 이해하고
+          협업하는 것이 중요하다는 것을 경험했습니다.
+
+        </p>
+
+      </section>
+
+      <!-- UI 구성 예시 -->
+
+<section class="detail-section ui-system-section">
+
+  <h2>
+    UI 구성 예시
+  </h2>
+
+  <p class="ui-system-desc">
+    프로젝트에서 사용한 주요 UI 요소와 스타일 구조를 정리했습니다.
+  </p>
+
+
+  <div class="ui-system-grid">
+
+
+    <!-- COLOR -->
+
+    <div class="ui-system-box color-box">
+
+      <h3>컬러</h3>
+
+      <div class="color-list type2">
+
+        <div class="color-item">
+          <span class="color-chip color-primary"></span>
+          <strong>#ff5f23</strong>
+        </div>
+
+        <div class="color-item">
+          <span class="color-chip color-secondary"></span>
+          <strong>#fff064</strong>
+        </div>
+
+        <div class="color-item">
+          <span class="color-chip color-gray"></span>
+          <strong>#838383</strong>
+        </div>
+
+        <div class="color-item">
+          <span class="color-chip color-light"></span>
+          <strong>#f5f5f5</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- TYPOGRAPHY -->
+
+    <div class="ui-system-box typography-box">
+
+      <h3>타이포그래피</h3>
+
+      <div class="type-list">
+
+        <div class="type-item type-h1">
+          <span>H1</span>
+          <strong>디자인 타이틀</strong>
+        </div>
+
+        <div class="type-item type-h2">
+          <span>H2</span>
+          <strong>서브 타이틀</strong>
+        </div>
+
+        <div class="type-item type-h3">
+          <span>H3</span>
+          <strong>섹션 제목</strong>
+        </div>
+
+        <div class="type-item type-body">
+          <span>Body</span>
+          <p>
+            본문 텍스트에 사용되는 기본 스타일입니다.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="font-name">
+        Pretendard
+      </p>
+
+    </div>
+
+
+    <!-- BUTTON -->
+
+    <div class="ui-system-box button-box">
+
+      <h3>버튼</h3>
+
+      <div class="button-preview">
+
+        <button type="button" class="ui-btn ui-btn-primary">
+          주요 버튼
+        </button>
+
+        <button type="button" class="ui-btn ui-btn-secondary">
+          보조 버튼
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- ICON -->
+
+    <div class="ui-system-box icon-box">
+
+      <h3>아이콘</h3>
+
+      <div class="icon-list">
+
+        <span class="ui-icon">▣</span>
+        <span class="ui-icon">▯</span>
+        <span class="ui-icon">&lt;/&gt;</span>
+        <span class="ui-icon">◉</span>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+    </div>
 
   </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="detail-footer">
+
+    <div class="container">
+
+      <span>
+        © 2026 YJ Portfolio
+      </span>
+
+      <a href="main.html#projects">
+        Projects →
+      </a>
+
+    </div>
+
+  </footer>
+
+
+</div>
 
 </body>
 </html>
