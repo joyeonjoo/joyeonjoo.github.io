@@ -351,7 +351,6 @@
   display: flex;
   gap: 14px;
 }
-
 .color-item {
   display: flex;
   flex-direction: column;
@@ -393,7 +392,23 @@
   font-weight: 500;
 }
 
+.color-list.type2 .color-primary {
+  background: #02a39f;
+}
 
+.color-list.type2 .color-secondary {
+  background: #fff064;
+}
+
+.color-list.type2 .color-gray {
+  background: #838383;
+}
+
+.color-list.type2 .color-light {
+  background: #f5f5f5;
+
+  border: 1px solid #E5E7EB;
+}
 /* =========================================
    TYPOGRAPHY
 ========================================= */
