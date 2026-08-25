@@ -370,19 +370,19 @@
 
 
 .color-primary {
-  background: #2563EB;
+  background: #02a39f;
 }
 
-.color-dark {
-  background: #1F2937;
+.color-secondary {
+  background: #fff064;
 }
 
 .color-gray {
-  background: #6B7280;
+  background: #838383;
 }
 
 .color-light {
-  background: #F3F4F6;
+  background: #f5f5f5;
 
   border: 1px solid #E5E7EB;
 }
